@@ -1,46 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const divisions = [
-  { id: "01", title: "Music", field: "Développement artistique", description: "Des artistes, des histoires et une musique qui traversent les frontières.", href: "/poles/music" },
-  { id: "02", title: "Entertainment", field: "Live & expériences", description: "Des moments qui réunissent les talents et leurs publics.", href: "/poles/entertainment" },
-  { id: "03", title: "Agency", field: "Création & stratégie", description: "Des idées et des identités qui donnent une forme aux ambitions.", href: "/poles/agency" },
-];
-
+import { divisions, projects } from "@/lib/content";
+import ProjectCard from "@/components/ProjectCard";
+import NextStep from "@/components/NextStep";
 export default function HomePage() {
-  return <main id="contenu" className="group-home">
-    <section className="portal-hero" aria-labelledby="portal-title">
-      <div className="portal-hero-art" aria-hidden="true"><span className="orb orb-one"/><span className="orb orb-two"/><span className="orb orb-three"/></div>
-      <div className="portal-hero-content">
-        <p className="portal-kicker">LMG / LE GROUPE</p>
-        <h1 id="portal-title">Des idées qui<br/><span>font avancer</span><br/>la culture.</h1>
-        <p>Musique, divertissement et création. Un groupe indépendant, trois expertises qui se rencontrent pour donner de l’ampleur aux projets.</p>
-        <Link href="/groupe" className="portal-button">Découvrir LMG <span aria-hidden="true">↗</span></Link>
-      </div>
-      <div className="portal-hero-bottom"><span>01 / 03 &nbsp; LE GROUPE</span><span>EXPLORER ↓</span></div>
-    </section>
-
-    <section className="portal-news" aria-label="À la une">
-      <div className="portal-news-title"><span className="blue-line"/>À LA UNE</div>
-      <Link href="/projets#fly"><span>Music</span><strong>LAAM — FLY : découvrez le projet</strong><b aria-hidden="true">↗</b></Link>
-      <Link href="/projets#deepa"><span>Agency</span><strong>Deepa Be Yourself : une nouvelle expérience digitale</strong><b aria-hidden="true">↗</b></Link>
-    </section>
-
-    <section className="portal-intro">
-      <div className="portal-section-label">01 / NOTRE VISION</div>
-      <div className="portal-intro-body"><h2>La créativité prend<br/>une autre dimension<br/><span>quand elle se rencontre.</span></h2><div><p>LMG fait dialoguer les métiers de la musique, de l’entertainment et de la création. Notre force : relier les talents, les idées et les publics dans un même écosystème.</p><Link href="/groupe" className="portal-text-link">Notre groupe <span>↗</span></Link></div></div>
-    </section>
-
-    <section className="portal-divisions" id="poles">
-      <div className="portal-section-label">02 / NOS ACTIVITÉS</div>
-      <div className="portal-divisions-head"><h2>Un groupe.<br/>Trois univers.</h2><p>Des expertises singulières. Une ambition partagée.</p></div>
-      <div className="portal-divisions-list">{divisions.map((division) => <Link href={division.href} className="portal-division" key={division.id}><span className="division-id">{division.id} / 03</span><div><span className="division-field">{division.field}</span><h3>LMG {division.title}</h3><p>{division.description}</p></div><span className="division-go" aria-hidden="true">↗</span></Link>)}</div>
-    </section>
-
-    <section className="portal-feature" aria-labelledby="feature-title"><div className="portal-feature-image"><Image src="/images/laam-fly.png" alt="Univers visuel du projet FLY de LAAM" fill sizes="(max-width: 800px) 100vw, 55vw" /></div><div className="portal-feature-copy"><div className="portal-section-label">03 / EN CE MOMENT</div><span className="feature-category">MUSIC · PROJET ARTISTIQUE</span><h2 id="feature-title">Une voix.<br/>Une histoire.<br/><i>Un mouvement.</i></h2><p>Découvrez FLY, le projet de LAAM mis à l’honneur dans l’univers LMG.</p><Link href="/projets#fly" className="portal-button">Explorer le projet <span aria-hidden="true">↗</span></Link></div></section>
-
-    <section className="portal-projects"><div className="portal-section-label">04 / À DÉCOUVRIR</div><div className="portal-projects-top"><h2>Ce qui nous anime.</h2><Link href="/projets" className="portal-text-link">Tous les projets <span>↗</span></Link></div><Link href="/projets#deepa" className="portal-project-card"><div className="portal-project-image"><Image src="/images/deepa.jpg" alt="Projet Deepa Be Yourself" fill sizes="(max-width: 800px) 100vw, 65vw" /></div><div><span>AGENCY / EXPÉRIENCE DIGITALE</span><h3>Deepa<br/>Be Yourself</h3><p>Une identité et une expérience pensées pour s’exprimer pleinement.</p><b aria-hidden="true">↗</b></div></Link></section>
-
-    <section className="portal-end"><span>LMG / ENSEMBLE, PLUS LOIN</span><h2>Et si la suite<br/>commençait <em>ici ?</em></h2><Link href="/contact" className="portal-button">Entrer en contact <span aria-hidden="true">↗</span></Link></section>
-  </main>;
+ return <main id="contenu"><section className="home-hero"><div className="hero-orbit" aria-hidden="true"/><div className="hero-copy"><p className="eyebrow">LEGACY MUSIC GROUP</p><h1>La culture.<br/>Les talents.<br/><span>Et la suite.</span></h1><p>Musique, live et création. Un groupe indépendant qui relie les expertises pour faire grandir les projets.</p><Link href="/groupe" className="button button-white">Découvrir le groupe<span aria-hidden="true">↗</span></Link></div><Link href="/projets/fly" className="hero-story"><div className="hero-story-image"><Image src="/images/laam-fly.png" alt="Visuel FLY de LAAM" fill sizes="(max-width: 800px) 85vw, 38vw" preload/></div><div><span>MUSIC / À DÉCOUVRIR</span><strong>LAAM — FLY <span aria-hidden="true">↗</span></strong></div></Link><div className="hero-bottom"><span>UN GROUPE. TROIS UNIVERS.</span><a href="#vision">Explorer <span aria-hidden="true">↓</span></a></div></section><div className="news-strip"><span>À LA UNE</span><Link href="/projets/fly"><b>Music</b> LAAM — FLY <span aria-hidden="true">↗</span></Link><Link href="/projets/deepa"><b>Agency</b> Deepa Be Yourself <span aria-hidden="true">↗</span></Link></div><section className="section vision-section" id="vision"><p className="eyebrow">01 / LE GROUPE</p><div><h2>Des métiers singuliers.<br/><span className="blue">Une ambition commune.</span></h2><div className="vision-description"><p>Un artiste développe son univers. Un événement rencontre son public. Une marque trouve sa voix. LMG réunit les expertises qui accompagnent ces trajectoires.</p><Link href="/groupe" className="text-link">Notre vision <span aria-hidden="true">↗</span></Link></div></div></section><section className="section section-ice" id="poles"><div className="section-heading"><p className="eyebrow">02 / NOS ACTIVITÉS</p><h2>Trois univers.<br/>Un même mouvement.</h2><Link href="/poles" className="text-link">Toutes nos activités <span aria-hidden="true">↗</span></Link></div><div className="division-list">{divisions.map(d=><Link key={d.slug} href={`/poles/${d.slug}`}><span className="index">{d.number}</span><div><p>{d.field}</p><h3>LMG {d.name}</h3></div><span className="round-arrow" aria-hidden="true">↗</span></Link>)}</div></section><section className="section"><div className="section-heading"><p className="eyebrow">03 / LES PROJETS</p><h2>Des idées.<br/>Des expressions concrètes.</h2><Link href="/projets" className="text-link">Explorer les projets <span aria-hidden="true">↗</span></Link></div><div className="project-grid">{projects.map(p=><ProjectCard key={p.slug} project={p}/>)}</div></section><NextStep/></main>;
 }
