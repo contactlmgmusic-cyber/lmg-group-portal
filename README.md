@@ -31,3 +31,7 @@ Les pages fonctionnent sans Supabase. Le client dans `lib/supabase.ts` est prép
 Pour une future connexion à un projet Supabase dédié, copier `.env.example` vers `.env.local` et renseigner les variables publiques du nouveau projet. Ne jamais ajouter de clé secrète dans une variable `NEXT_PUBLIC_` ni dans Git.
 
 Les visuels de `public/images` sont ceux fournis dans le projet local.
+
+## Domaine public
+
+`NEXT_PUBLIC_SITE_URL` définit le domaine utilisé dans les liens canoniques, le sitemap et les aperçus de partage. Par défaut : `https://lmg-group-portal.vercel.app`. Mettre à jour cette variable lors du raccordement du domaine personnalisé.

@@ -21,9 +21,10 @@ export default function SiteHeader() {
     const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") { if (expanded) { setExpanded(null); lastTrigger.current?.focus(); } else if (mobileOpen) { setMobileOpen(false); mobileToggle.current?.focus(); } } };
     const outside = (event: PointerEvent) => { if (!header.current?.contains(event.target as Node)) { setExpanded(null); setMobileOpen(false); } };
     const focusOutside = (event: FocusEvent) => { if (!header.current?.contains(event.target as Node)) { setExpanded(null); setMobileOpen(false); } };
+    const breakpoint = window.matchMedia("(max-width: 800px)");
     const resize = () => { setExpanded(null); setMobileOpen(false); };
-    document.addEventListener("keydown", onKey); document.addEventListener("pointerdown", outside); document.addEventListener("focusin", focusOutside); window.addEventListener("resize", resize);
-    return () => { document.removeEventListener("keydown", onKey); document.removeEventListener("pointerdown", outside); document.removeEventListener("focusin", focusOutside); window.removeEventListener("resize", resize); };
+    document.addEventListener("keydown", onKey); document.addEventListener("pointerdown", outside); document.addEventListener("focusin", focusOutside); breakpoint.addEventListener("change", resize);
+    return () => { document.removeEventListener("keydown", onKey); document.removeEventListener("pointerdown", outside); document.removeEventListener("focusin", focusOutside); breakpoint.removeEventListener("change", resize); };
   }, [expanded, mobileOpen]);
   const active = (path: string) => pathname === path || pathname.startsWith(path + "/");
   const toggleSection = (id: string, target: HTMLButtonElement) => { lastTrigger.current = target; setExpanded(expanded === id ? null : id); };

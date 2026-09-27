@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import DivisionPage from "@/components/DivisionPage";
-export const metadata: Metadata = { title: "LMG Music" };
+
 export default function Page() { return <DivisionPage slug="music"/>; }
+
+export const metadata = pageMetadata("LMG Music","Direction artistique, projets et développement : découvrez le pôle musical de LMG.","/poles/music");
