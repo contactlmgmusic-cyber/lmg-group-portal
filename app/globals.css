@@ -134,3 +134,30 @@
 .mobile-language-switcher span {
   opacity: 0.35;
 }
+
+/* Header search — keep visible next to language switcher */
+.header-search {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  margin-left: 8px;
+  color: #111827;
+  text-decoration: none;
+}
+
+.header-search svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.header-search:hover {
+  opacity: 0.55;
+}
+
+.language-switcher {
+  flex-shrink: 0;
+}
