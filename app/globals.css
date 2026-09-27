@@ -61,3 +61,76 @@
 /* Navigation orientation and keyboard visibility. */
 .desktop-nav .mega-links a[aria-current=page]{color:#b7ccff}.mega-links a[aria-current=page] strong::after{content:" •"}.mobile-section-trigger.is-current,.header-search[aria-current=page]{color:var(--blue)}.mobile-menu .mobile-submenu a[aria-current=page] strong{color:var(--blue)}.mobile-menu .mobile-submenu a[aria-current=page]{border-left:2px solid var(--blue);padding-left:12px}.site-header a:focus-visible,.site-header button:focus-visible{outline-offset:2px}.mega-panel a:focus-visible,.mega-panel button:focus-visible{outline-color:#adc2ff}.breadcrumbs a:hover{text-decoration:underline;text-underline-offset:4px}.not-found>p:not(.eyebrow){max-width:640px;line-height:1.8}.not-found-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:30px}.not-found-actions .button{background:var(--blue);color:#fff}
 @media(max-width:560px){.breadcrumbs{flex-wrap:wrap;row-gap:8px;line-height:1.6}.not-found-actions{align-items:flex-start;flex-direction:column}}
+
+/* Language switcher — LMG Group */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 14px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.language-switcher button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 2px 1px;
+  margin: 0;
+  color: #8b8f98;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.language-switcher button:hover {
+  color: #111827;
+}
+
+.language-switcher button.is-active {
+  color: #111827;
+}
+
+.language-switcher span {
+  color: #c3c6cc;
+  font-weight: 400;
+}
+
+/* Mobile language switcher */
+.mobile-language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.mobile-language-switcher button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 3px 0;
+  margin: 0;
+  color: #8b8f98;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mobile-language-switcher button.is-active {
+  color: currentColor;
+}
+
+.mobile-language-switcher span {
+  opacity: 0.35;
+}
