@@ -1,4 +1,5 @@
-export const news = [
+import type { NewsArticle } from "./editorial-types";
+export const news: readonly NewsArticle[] = [
   {
     slug: "un-nouveau-regard-sur-lmg",
     title: "Un nouveau regard sur LMG.",

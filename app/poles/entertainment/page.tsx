@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { pageMetadata } from "@/lib/metadata";
 import DivisionPage from "@/components/DivisionPage";
 

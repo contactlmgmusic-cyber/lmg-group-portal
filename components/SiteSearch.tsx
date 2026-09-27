@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { normalizeSearch, searchEntries } from "@/lib/search";
+import { normalizeSearch, type SearchEntry } from "@/lib/search";
 const categories = ["Tout", "Le groupe", "Pôles", "Projets", "Actualités"];
-export default function SiteSearch() {
+export default function SiteSearch({searchEntries}:{searchEntries:SearchEntry[]}) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("Tout");
   const input = useRef<HTMLInputElement>(null);
