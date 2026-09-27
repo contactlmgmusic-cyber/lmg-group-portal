@@ -316,27 +316,16 @@ export default function SiteHeader() {
       </div>
 
       <Link
-        href="/recherche"
-        className="header-search"
-        aria-current={
-          pathname === "/recherche" ? "page" : undefined
-        }
-        aria-label={t.navigation.search}
-        onClick={closeAll}
-      >
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          aria-hidden="true"
-        >
-          <circle cx="10.5" cy="10.5" r="6.5" />
-          <path d="m16 16 5 5" />
-        </svg>
-      </Link>
+  href="/recherche"
+  className="header-search"
+  aria-current={
+    pathname === "/recherche" ? "page" : undefined
+  }
+  aria-label={t.navigation.search}
+  onClick={closeAll}
+>
+  <span className="search-icon" aria-hidden="true" />
+</Link>
 
       <button
         ref={mobileToggle}

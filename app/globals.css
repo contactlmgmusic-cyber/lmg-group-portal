@@ -389,3 +389,59 @@
     opacity: 0.35;
   }
 }
+
+/* Search icon — CSS drawn to guarantee rendering */
+.site-header .header-search .search-icon {
+  position: relative;
+  display: block !important;
+
+  width: 18px;
+  height: 18px;
+
+  border: 1.8px solid currentColor;
+  border-radius: 50%;
+
+  box-sizing: border-box;
+}
+
+.site-header .header-search .search-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 1.8px;
+
+  background: currentColor;
+
+  right: -6px;
+  bottom: -3px;
+
+  border-radius: 2px;
+
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+@media (min-width: 801px) {
+  .site-header > .header-search {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    justify-self: end !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: var(--ink) !important;
+
+    overflow: visible !important;
+  }
+}
