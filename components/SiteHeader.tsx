@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 const sections = [
-  { id: "about", label: "About LMG Group", path: "/groupe", title: "About LMG Group", intro: "La vision, les métiers et les personnes qui font avancer le groupe.", links: [["/groupe", "Découvrir le groupe", "Legacy Music Group"], ["/groupe#vision", "Notre vision", "Ce qui anime Legacy Music Group"], ["/groupe#ecosysteme", "L’écosystème LMG", "Trois pôles, une ambition commune"], ["/groupe#approche", "Notre approche", "Comprendre, relier, construire"], ["/groupe#direction", "La direction", "L’équipe à la tête du groupe"]] },
+  { id: "about", label: "About LMG Group", path: "/groupe", title: "About LMG Group", intro: "La vision, les métiers et les personnes qui font avancer le groupe.", links: [["/groupe", "Découvrir le groupe", "Legacy Music Group"], ["/groupe#vision", "Notre vision", "Ce qui anime Legacy Music Group"], ["/groupe#ecosysteme", "L’écosystème LMG", "Trois pôles, une ambition commune"], ["/groupe#approche", "Notre approche", "Comprendre, relier, construire"], ["/groupe#direction", "La direction", "L’équipe à la tête du groupe"], ["/presse", "Presse & médias", "Présentation, logos et contact presse"]] },
   { id: "businesses", label: "Businesses & products", path: "/poles", title: "Business segments", intro: "Trois expertises complémentaires, un même groupe.", links: [["/poles", "Toutes nos activités", "L’écosystème LMG"], ["/poles/music", "LMG Music", "Musique & développement artistique"], ["/poles/entertainment", "LMG Entertainment", "Booking & expériences live"], ["/poles/agency", "LMG Agency", "Stratégie, création & digital"]] },
   { id: "projects", label: "Projets", path: "/projets", title: "Les projets du groupe", intro: "Découvrez les univers et les réalisations portés par nos pôles.", links: [["/projets", "Tous les projets", "La sélection LMG"], ["/projets/fly", "LAAM — FLY", "Music / Projet artistique"], ["/projets/deepa", "Deepa Be Yourself", "Agency / Expérience digitale"]] },
   { id: "news", label: "Actualités", path: "/actualites", title: "Le journal du groupe", intro: "Les nouvelles de LMG et les projets qui font avancer le groupe.", links: [["/actualites", "Toutes les actualités", "Le journal LMG"], ["/actualites/un-nouveau-regard-sur-lmg", "Un nouveau regard sur LMG", "Vie du groupe / 27 septembre 2026"]] },
@@ -27,7 +27,7 @@ export default function SiteHeader() {
     document.addEventListener("keydown", onKey); document.addEventListener("pointerdown", outside); document.addEventListener("focusin", focusOutside); breakpoint.addEventListener("change", resize);
     return () => { document.removeEventListener("keydown", onKey); document.removeEventListener("pointerdown", outside); document.removeEventListener("focusin", focusOutside); breakpoint.removeEventListener("change", resize); };
   }, [expanded, mobileOpen]);
-  const active = (path: string) => pathname === path || pathname.startsWith(path + "/");
+  const active = (path: string) => pathname === path || pathname.startsWith(path + "/") || (path === "/groupe" && pathname === "/presse");
   const toggleSection = (id: string, target: HTMLButtonElement) => { lastTrigger.current = target; setExpanded(expanded === id ? null : id); };
   const closePanel = () => { setExpanded(null); lastTrigger.current?.focus(); };
   return <header ref={header} className="site-header">
