@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: { default: "Home - LMG Group Portal", template: "%s - LMG Group Portal" },
   description: "Découvrez le groupe LMG, ses pôles Music, Entertainment et Agency, et les projets qui relient musique, création et expérience.",
-  icons: { icon: { url: "/images/lmg-logo.png", type: "image/png", sizes: "48x48" } },
+  icons: { icon: { url: "/images/lmg-group-icon.png", type: "image/png", sizes: "64x64" } },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
