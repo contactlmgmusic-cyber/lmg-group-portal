@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     "Discover Legacy Music Group, its Music and Agency businesses, and the projects connecting music, live entertainment, strategy and creative experiences.",
 
   icons: {
-  icon: "/icon.png",
-  shortcut: "/icon.png",
-  apple: "/apple-icon.png",
+  icon: "/lmg-group-icon.png?v=1",
+  shortcut: "/lmg-group-icon.png?v=1",
+  apple: "/apple-icon.png?v=1",
 },
 };
 
