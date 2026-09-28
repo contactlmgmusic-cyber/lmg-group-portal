@@ -509,20 +509,6 @@ export default function GroupContent() {
               {content.leadership.presidentDescription}
             </p>
           </article>
-
-          <article>
-            <span className="eyebrow">
-              {content.leadership.directionRole}
-            </span>
-
-            <h3>
-              Yliana Faidherbe
-            </h3>
-
-            <p>
-              {content.leadership.directionDescription}
-            </p>
-          </article>
         </div>
 
         <Link

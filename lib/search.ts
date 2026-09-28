@@ -23,7 +23,7 @@ const coreEntries: SearchEntry[] = [
     description:
       "Vision, approach, leadership and structure of Legacy Music Group.",
     keywords:
-      "LMG Legacy Music Group groupe group about à propos vision approach approche leadership direction Joseph Kayaya Yliana Faidherbe founders fondateurs équipe team values valeurs",
+      "LMG Legacy Music Group groupe group about à propos vision approach approche leadership direction Joseph Kayaya founders fondateurs équipe team values valeurs",
   },
 
   {
