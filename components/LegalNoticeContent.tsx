@@ -4,67 +4,70 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 export default function LegalNoticeContent() {
   const { locale } = useLanguage();
-
   const isFr = locale === "fr";
 
   return (
-    <main className="bg-white text-black">
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-32 md:px-10 md:pb-32 md:pt-40">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
-            {isFr ? "Informations légales" : "Legal information"}
-          </p>
+    <main className="legal-page">
+      <section className="legal-hero">
+        <div className="legal-hero-inner">
+          <div className="legal-hero-copy">
+            <p className="legal-eyebrow">
+              {isFr ? "Informations légales" : "Legal information"}
+            </p>
 
-          <h1 className="text-5xl font-semibold tracking-[-0.04em] md:text-7xl">
-            {isFr ? "Mentions légales" : "Legal Notice"}
-          </h1>
+            <h1>
+              {isFr ? "Mentions légales" : "Legal Notice"}
+            </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-7 text-neutral-600 md:text-lg">
-            {isFr
-              ? "Informations relatives à l’édition, à l’hébergement et à l’utilisation du site officiel de Legacy Music Group."
-              : "Information relating to the publication, hosting and use of the official Legacy Music Group website."}
-          </p>
+            <p className="legal-intro">
+              {isFr
+                ? "Informations relatives à l’édition, à l’hébergement et à l’utilisation du site officiel de Legacy Music Group."
+                : "Information relating to the publication, hosting and use of the official Legacy Music Group website."}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-neutral-200">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-[260px_1fr] md:px-10 md:py-28">
-          <aside>
-            <p className="text-sm font-semibold">
-              {isFr ? "Legacy Music Group" : "Legacy Music Group"}
-            </p>
-            <p className="mt-2 text-sm leading-6 text-neutral-500">
+      <section className="legal-body">
+        <div className="legal-layout">
+          <aside className="legal-aside">
+            <strong>Legacy Music Group</strong>
+
+            <p>
               {isFr
                 ? "Dernière mise à jour : septembre 2026"
                 : "Last updated: September 2026"}
             </p>
           </aside>
 
-          <div className="max-w-3xl space-y-16">
+          <div className="legal-content">
             <LegalSection
-              title={isFr ? "1. Éditeur du site" : "1. Website publisher"}
+              title={
+                isFr
+                  ? "1. Éditeur du site"
+                  : "1. Website publisher"
+              }
             >
               {isFr ? (
                 <>
                   <p>
-                    Le présent site est édité par <strong>Legacy Music Group (LMG)</strong>.
+                    Le présent site est édité par{" "}
+                    <strong>Legacy Music Group (LMG)</strong>.
                   </p>
+
+                  <p>Société en cours de constitution.</p>
+
                   <p>
-                    Société en cours de constitution.
+                    Les informations relatives à la forme juridique,
+                    au capital social, au siège social, au numéro
+                    SIREN et à l’immatriculation au Registre du
+                    commerce et des sociétés seront complétées à
+                    l’issue de l’immatriculation de la société.
                   </p>
-                  <p>
-                    Les informations relatives à la forme juridique, au capital
-                    social, au siège social, au numéro SIREN et à
-                    l’immatriculation au Registre du commerce et des sociétés
-                    seront complétées à l’issue de l’immatriculation de la
-                    société.
-                  </p>
+
                   <p>
                     Contact :{" "}
-                    <a
-                      href="mailto:contact@legacymusicgroup.fr"
-                      className="underline underline-offset-4"
-                    >
+                    <a href="mailto:contact@legacymusicgroup.fr">
                       contact@legacymusicgroup.fr
                     </a>
                   </p>
@@ -72,23 +75,25 @@ export default function LegalNoticeContent() {
               ) : (
                 <>
                   <p>
-                    This website is published by <strong>Legacy Music Group (LMG)</strong>.
+                    This website is published by{" "}
+                    <strong>Legacy Music Group (LMG)</strong>.
                   </p>
+
                   <p>
                     Company currently being incorporated in France.
                   </p>
+
                   <p>
-                    Information relating to the company&apos;s legal form,
-                    share capital, registered office, SIREN number and
-                    registration with the Trade and Companies Register will be
-                    added once the company has been incorporated.
+                    Information relating to the company&apos;s legal
+                    form, share capital, registered office, SIREN
+                    number and registration with the Trade and
+                    Companies Register will be added once the company
+                    has been incorporated.
                   </p>
+
                   <p>
                     Contact:{" "}
-                    <a
-                      href="mailto:contact@legacymusicgroup.fr"
-                      className="underline underline-offset-4"
-                    >
+                    <a href="mailto:contact@legacymusicgroup.fr">
                       contact@legacymusicgroup.fr
                     </a>
                   </p>
@@ -116,6 +121,7 @@ export default function LegalNoticeContent() {
               {isFr ? (
                 <>
                   <p>Le site est hébergé par Vercel Inc.</p>
+
                   <p>
                     440 N Barranca Ave #4133
                     <br />
@@ -127,6 +133,7 @@ export default function LegalNoticeContent() {
               ) : (
                 <>
                   <p>The website is hosted by Vercel Inc.</p>
+
                   <p>
                     440 N Barranca Ave #4133
                     <br />
@@ -159,7 +166,9 @@ export default function LegalNoticeContent() {
             </LegalSection>
 
             <LegalSection
-              title={isFr ? "5. Responsabilité" : "5. Liability"}
+              title={
+                isFr ? "5. Responsabilité" : "5. Liability"
+              }
             >
               <p>
                 {isFr
@@ -175,7 +184,9 @@ export default function LegalNoticeContent() {
             </LegalSection>
 
             <LegalSection
-              title={isFr ? "6. Liens externes" : "6. External links"}
+              title={
+                isFr ? "6. Liens externes" : "6. External links"
+              }
             >
               <p>
                 {isFr
@@ -199,7 +210,11 @@ export default function LegalNoticeContent() {
             </LegalSection>
 
             <LegalSection
-              title={isFr ? "8. Droit applicable" : "8. Applicable law"}
+              title={
+                isFr
+                  ? "8. Droit applicable"
+                  : "8. Applicable law"
+              }
             >
               <p>
                 {isFr
@@ -222,12 +237,10 @@ function LegalSection({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold tracking-[-0.025em] md:text-3xl">
-        {title}
-      </h2>
+    <section className="legal-section">
+      <h2>{title}</h2>
 
-      <div className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600 md:text-base">
+      <div className="legal-section-copy">
         {children}
       </div>
     </section>

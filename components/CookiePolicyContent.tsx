@@ -7,37 +7,44 @@ export default function CookiePolicyContent() {
   const isFr = locale === "fr";
 
   return (
-    <main className="bg-white text-black">
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-32 md:px-10 md:pb-32 md:pt-40">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
-            {isFr ? "Préférences et traceurs" : "Preferences & tracking"}
-          </p>
+    <main className="legal-page">
+      <section className="legal-hero">
+        <div className="legal-hero-inner">
+          <div className="legal-hero-copy">
+            <p className="legal-eyebrow">
+              {isFr
+                ? "Préférences et traceurs"
+                : "Preferences & tracking"}
+            </p>
 
-          <h1 className="text-5xl font-semibold tracking-[-0.04em] md:text-7xl">
-            {isFr ? "Politique de cookies" : "Cookie Policy"}
-          </h1>
+            <h1>
+              {isFr
+                ? "Politique de cookies"
+                : "Cookie Policy"}
+            </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-7 text-neutral-600 md:text-lg">
-            {isFr
-              ? "Cette page présente les cookies et technologies similaires susceptibles d’être utilisés sur le site Legacy Music Group et la manière dont vous pouvez contrôler vos choix."
-              : "This page explains the cookies and similar technologies that may be used on the Legacy Music Group website and how you can control your choices."}
-          </p>
+            <p className="legal-intro">
+              {isFr
+                ? "Cette page présente les cookies et technologies similaires susceptibles d’être utilisés sur le site Legacy Music Group et la manière dont vous pouvez contrôler vos choix."
+                : "This page explains the cookies and similar technologies that may be used on the Legacy Music Group website and how you can control your choices."}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-neutral-200">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-[260px_1fr] md:px-10 md:py-28">
-          <aside>
-            <p className="text-sm font-semibold">Legacy Music Group</p>
-            <p className="mt-2 text-sm leading-6 text-neutral-500">
+      <section className="legal-body">
+        <div className="legal-layout">
+          <aside className="legal-aside">
+            <strong>Legacy Music Group</strong>
+
+            <p>
               {isFr
                 ? "Dernière mise à jour : septembre 2026"
                 : "Last updated: September 2026"}
             </p>
           </aside>
 
-          <div className="max-w-3xl space-y-16">
+          <div className="legal-content">
             <Section
               title={
                 isFr
@@ -47,8 +54,8 @@ export default function CookiePolicyContent() {
             >
               <p>
                 {isFr
-                  ? "Un cookie est un petit fichier ou une information enregistrée ou lue sur votre terminal lors de la consultation d’un site ou de l’utilisation d’un service numérique. Des technologies similaires, comme le stockage local du navigateur, peuvent également être utilisées."
-                  : "A cookie is a small file or piece of information stored on or read from your device when you visit a website or use a digital service. Similar technologies, such as browser local storage, may also be used."}
+                  ? "Un cookie est un petit fichier ou une information enregistrée ou lue sur votre terminal lors de la consultation d’un site. Des technologies similaires, comme le stockage local du navigateur, peuvent également être utilisées."
+                  : "A cookie is a small file or piece of information stored on or read from your device when you visit a website. Similar technologies, such as browser local storage, may also be used."}
               </p>
             </Section>
 
@@ -61,14 +68,20 @@ export default function CookiePolicyContent() {
             >
               <p>
                 {isFr
-                  ? "Certaines technologies sont nécessaires au fonctionnement du site, à sa sécurité ou à la fourniture d’une fonctionnalité expressément demandée par l’utilisateur. Lorsqu’elles répondent aux conditions prévues par la réglementation applicable, elles peuvent être utilisées sans consentement préalable."
-                  : "Certain technologies are required for the operation and security of the website or to provide a feature expressly requested by the user. Where they meet the conditions provided by applicable law, they may be used without prior consent."}
+                  ? "Certaines technologies peuvent être nécessaires au bon fonctionnement du site et à la fourniture de fonctionnalités demandées par l’utilisateur."
+                  : "Certain technologies may be required for the website to function correctly and to provide features requested by the user."}
               </p>
 
               <p>
                 {isFr
-                  ? "Cela peut notamment inclure la mémorisation de certaines préférences d’interface, telles que la langue sélectionnée."
-                  : "This may include remembering certain interface preferences, such as the language selected by the user."}
+                  ? "Le site utilise notamment le stockage local du navigateur pour mémoriser certaines préférences, telles que la langue sélectionnée et vos choix relatifs aux cookies."
+                  : "The website notably uses browser local storage to remember certain preferences, such as your selected language and your cookie choices."}
+              </p>
+
+              <p>
+                {isFr
+                  ? "Ces technologies nécessaires ne sont pas désactivées par le gestionnaire de préférences."
+                  : "These necessary technologies are not disabled by the preference manager."}
               </p>
             </Section>
 
@@ -81,92 +94,119 @@ export default function CookiePolicyContent() {
             >
               <p>
                 {isFr
-                  ? "LMG peut utiliser des outils de mesure d’audience afin de comprendre l’utilisation du site et d’en améliorer les performances. Lorsque ces outils nécessitent votre consentement, ils ne sont activés qu’après votre accord."
-                  : "LMG may use audience measurement tools to understand how the website is used and improve its performance. Where these tools require consent, they are activated only after you have agreed."}
+                  ? "Legacy Music Group peut être amené à utiliser des outils de mesure d’audience afin de mieux comprendre l’utilisation du site et d’en améliorer les performances."
+                  : "Legacy Music Group may use audience measurement tools to better understand how the website is used and to improve its performance."}
+              </p>
+
+              <p>
+                {isFr
+                  ? "Lorsque le consentement est requis par la réglementation applicable, ces outils ne doivent être activés qu’après votre accord."
+                  : "Where consent is required under applicable law, these tools should only be activated after you have given your permission."}
               </p>
             </Section>
 
             <Section
               title={
                 isFr
-                  ? "4. Services et contenus tiers"
-                  : "4. Third-party services and content"
+                  ? "4. Contenus et services tiers"
+                  : "4. Third-party content and services"
               }
             >
               <p>
                 {isFr
-                  ? "Certaines fonctionnalités ou contenus provenant de services tiers peuvent nécessiter le dépôt ou la lecture de traceurs. Lorsque le consentement est requis, ces services ne doivent être activés qu’après votre choix."
-                  : "Certain features or content provided by third-party services may require tracking technologies. Where consent is required, these services should only be activated after you have made your choice."}
-              </p>
-            </Section>
-
-            <Section
-              title={isFr ? "5. Vos choix" : "5. Your choices"}
-            >
-              <p>
-                {isFr
-                  ? "Lorsqu’un consentement est requis, vous pouvez accepter ou refuser les traceurs non essentiels. Le refus n’empêche pas l’accès aux fonctionnalités essentielles du site."
-                  : "Where consent is required, you may accept or reject non-essential tracking technologies. Rejecting them does not prevent access to the website’s essential features."}
+                  ? "Certaines fonctionnalités du site peuvent, le cas échéant, faire appel à des services fournis par des plateformes tierces."
+                  : "Certain website features may, where applicable, rely on services provided by third-party platforms."}
               </p>
 
               <p>
                 {isFr
-                  ? "Vous pouvez également personnaliser vos choix par finalité et les modifier ultérieurement."
-                  : "You can also customise your choices by purpose and change them later."}
+                  ? "Lorsque ces services impliquent le dépôt ou la lecture de traceurs soumis au consentement, ils ne doivent être activés qu’après votre choix."
+                  : "Where those services involve the use of tracking technologies requiring consent, they should only be enabled after you have made your choice."}
               </p>
             </Section>
 
             <Section
               title={
                 isFr
-                  ? "6. Modifier ou retirer votre consentement"
-                  : "6. Changing or withdrawing consent"
+                  ? "5. Vos choix"
+                  : "5. Your choices"
               }
             >
               <p>
                 {isFr
-                  ? "Vous pouvez revenir sur vos choix à tout moment grâce au lien « Gérer mes cookies » disponible dans le pied de page du site."
-                  : "You can change your choices at any time using the “Manage Cookies” link available in the website footer."}
+                  ? "Lorsqu’un choix est requis, vous pouvez accepter ou refuser les technologies facultatives proposées par le site."
+                  : "Where a choice is required, you can accept or reject the optional technologies offered by the website."}
+              </p>
+
+              <p>
+                {isFr
+                  ? "Le refus des technologies facultatives n’empêche pas l’utilisation des fonctionnalités strictement nécessaires au fonctionnement du site."
+                  : "Rejecting optional technologies does not prevent the use of features that are strictly necessary for the website to operate."}
               </p>
             </Section>
 
             <Section
               title={
                 isFr
-                  ? "7. Durée de conservation des choix"
+                  ? "6. Modifier ou retirer votre choix"
+                  : "6. Changing or withdrawing your choice"
+              }
+            >
+              <p>
+                {isFr
+                  ? "Vous pouvez modifier vos préférences à tout moment en utilisant l’option « Gérer mes cookies » disponible dans le pied de page du site."
+                  : "You can change your preferences at any time using the “Customize Cookies” option available in the website footer."}
+              </p>
+
+              <p>
+                {isFr
+                  ? "Le retrait de votre consentement n’affecte pas la licéité des traitements réalisés avant ce retrait."
+                  : "Withdrawing your consent does not affect the lawfulness of processing carried out before that withdrawal."}
+              </p>
+            </Section>
+
+            <Section
+              title={
+                isFr
+                  ? "7. Conservation de vos choix"
                   : "7. Retention of your choices"
               }
             >
               <p>
                 {isFr
-                  ? "Votre choix relatif aux cookies peut être mémorisé pendant une durée limitée afin d’éviter de vous solliciter à chaque visite. À l’issue de cette période, le site pourra vous demander d’exprimer à nouveau votre choix."
-                  : "Your cookie choices may be remembered for a limited period so that you are not asked on every visit. Once that period expires, the website may ask you to make a new choice."}
+                  ? "Vos choix sont mémorisés pendant une durée limitée afin d’éviter de vous solliciter à chaque visite. Ils pourront vous être demandés de nouveau lorsque cette durée expire ou lorsque l’utilisation des technologies du site évolue de manière significative."
+                  : "Your choices are stored for a limited period so that you are not asked on every visit. You may be asked again when that period expires or when the website’s use of technologies changes significantly."}
               </p>
             </Section>
 
             <Section
               title={
                 isFr
-                  ? "8. Évolution des cookies utilisés"
-                  : "8. Changes to cookies used"
+                  ? "8. Évolution des technologies utilisées"
+                  : "8. Changes to technologies used"
               }
             >
               <p>
                 {isFr
-                  ? "Cette politique pourra être mise à jour si les technologies ou prestataires utilisés par le site évoluent. Les catégories et services effectivement activés devront correspondre aux informations présentées dans le gestionnaire de cookies."
-                  : "This policy may be updated if the technologies or service providers used by the website change. The categories and services actually enabled must correspond to the information displayed in the cookie manager."}
+                  ? "Cette politique peut être mise à jour lorsque les technologies ou prestataires utilisés sur le site évoluent."
+                  : "This policy may be updated when the technologies or service providers used by the website change."}
+              </p>
+
+              <p>
+                {isFr
+                  ? "Les catégories et services présentés dans le gestionnaire de préférences ont vocation à refléter les technologies effectivement utilisées par le site."
+                  : "The categories and services shown in the preference manager are intended to reflect the technologies actually used by the website."}
               </p>
             </Section>
 
-            <Section title={isFr ? "9. Contact" : "9. Contact"}>
+            <Section
+              title={isFr ? "9. Contact" : "9. Contact"}
+            >
               <p>
                 {isFr
-                  ? "Pour toute question relative à l’utilisation des cookies ou à la protection de vos données :"
-                  : "For any question relating to cookies or the protection of your personal data:"}{" "}
-                <a
-                  href="mailto:contact@legacymusicgroup.fr"
-                  className="underline underline-offset-4"
-                >
+                  ? "Pour toute question relative à l’utilisation des cookies ou autres technologies similaires, vous pouvez nous contacter à l’adresse suivante : "
+                  : "For any questions relating to cookies or similar technologies, you can contact us at: "}
+                <a href="mailto:contact@legacymusicgroup.fr">
                   contact@legacymusicgroup.fr
                 </a>
               </p>
@@ -186,12 +226,10 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold tracking-[-0.025em] md:text-3xl">
-        {title}
-      </h2>
+    <section className="legal-section">
+      <h2>{title}</h2>
 
-      <div className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600 md:text-base">
+      <div className="legal-section-copy">
         {children}
       </div>
     </section>

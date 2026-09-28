@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { useLanguage } from "@/components/LanguageProvider";
 
 type Consent = {
@@ -60,21 +61,47 @@ export default function CookieConsent() {
       setSettingsOpen(true);
     }
 
-    window.addEventListener("lmg:open-cookie-settings", openSettings);
+    window.addEventListener(
+      "lmg:open-cookie-settings",
+      openSettings
+    );
 
     return () => {
-      window.removeEventListener("lmg:open-cookie-settings", openSettings);
+      window.removeEventListener(
+        "lmg:open-cookie-settings",
+        openSettings
+      );
     };
   }, []);
 
+  useEffect(() => {
+    if (!settingsOpen) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setSettingsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [settingsOpen]);
+
   function save(next: Consent) {
-    const value = {
+    const value: Consent = {
       ...next,
-      necessary: true as const,
+      necessary: true,
       updatedAt: new Date().toISOString(),
     };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(value)
+    );
+
     setConsent(value);
     setBannerOpen(false);
     setSettingsOpen(false);
@@ -109,20 +136,29 @@ export default function CookieConsent() {
   return (
     <>
       {bannerOpen && (
-        <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-white/10 bg-[#17181c] text-white shadow-[0_-20px_60px_rgba(0,0,0,0.18)]">
-          <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-7 md:px-10 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                {isFr ? "Votre confidentialité" : "Your privacy"}
+        <aside
+          className="cookie-banner"
+          aria-label={
+            isFr
+              ? "Préférences de confidentialité"
+              : "Privacy preferences"
+          }
+        >
+          <div className="cookie-banner-inner">
+            <div className="cookie-banner-copy">
+              <p className="cookie-eyebrow">
+                {isFr
+                  ? "Votre confidentialité"
+                  : "Your privacy"}
               </p>
 
-              <h2 className="mt-3 text-xl font-semibold tracking-[-0.02em]">
+              <h2>
                 {isFr
                   ? "LMG respecte vos choix."
                   : "LMG respects your choices."}
               </h2>
 
-              <p className="mt-3 text-sm leading-6 text-white/65">
+              <p className="cookie-description">
                 {isFr
                   ? "Nous utilisons les technologies nécessaires au fonctionnement du site. Avec votre accord, nous pouvons également utiliser des outils de mesure d’audience et certains services tiers."
                   : "We use technologies required for the website to function. With your permission, we may also use audience measurement tools and certain third-party services."}
@@ -130,91 +166,99 @@ export default function CookieConsent() {
 
               <a
                 href="/cookies"
-                className="mt-4 inline-block text-sm underline decoration-white/30 underline-offset-4 transition hover:decoration-white"
+                className="cookie-policy-link"
               >
                 {isFr
                   ? "En savoir plus sur les cookies"
-                  : "Learn more about cookies"}
+                  : "Learn more about cookies"}{" "}
+                ↗
               </a>
             </div>
 
-            <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:flex-wrap lg:justify-end">
+            <div className="cookie-actions">
               <button
                 type="button"
+                className="cookie-button cookie-button-secondary"
                 onClick={rejectOptional}
-                className="min-h-12 border border-white/25 px-6 text-sm font-medium transition hover:bg-white/10"
               >
                 {isFr ? "Tout refuser" : "Reject all"}
               </button>
 
               <button
                 type="button"
+                className="cookie-button cookie-button-secondary"
                 onClick={() => {
                   setBannerOpen(false);
                   setSettingsOpen(true);
                 }}
-                className="min-h-12 border border-white/25 px-6 text-sm font-medium transition hover:bg-white/10"
               >
                 {isFr ? "Personnaliser" : "Customize"}
               </button>
 
               <button
                 type="button"
+                className="cookie-button cookie-button-primary"
                 onClick={acceptAll}
-                className="min-h-12 bg-white px-6 text-sm font-semibold text-black transition hover:bg-neutral-200"
               >
                 {isFr ? "Tout accepter" : "Accept all"}
               </button>
             </div>
           </div>
-        </div>
+        </aside>
       )}
 
       {settingsOpen && (
         <div
-          className="fixed inset-0 z-[110] flex items-end justify-center bg-black/55 p-0 backdrop-blur-[2px] md:items-center md:p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="cookie-settings-title"
+          className="cookie-modal-backdrop"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setSettingsOpen(false);
+            }
+          }}
         >
-          <div className="max-h-[92vh] w-full overflow-y-auto bg-white text-black md:max-w-2xl">
-            <div className="border-b border-neutral-200 px-6 py-7 md:px-10">
-              <div className="flex items-start justify-between gap-8">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                    Legacy Music Group
-                  </p>
+          <div
+            className="cookie-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cookie-settings-title"
+          >
+            <div className="cookie-modal-header">
+              <div>
+                <p className="cookie-modal-brand">
+                  Legacy Music Group
+                </p>
 
-                  <h2
-                    id="cookie-settings-title"
-                    className="mt-3 text-3xl font-semibold tracking-[-0.035em]"
-                  >
-                    {isFr
-                      ? "Gérer mes cookies"
-                      : "Customize Cookies"}
-                  </h2>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setSettingsOpen(false)}
-                  aria-label={isFr ? "Fermer" : "Close"}
-                  className="flex h-10 w-10 items-center justify-center border border-neutral-200 text-xl transition hover:bg-neutral-100"
-                >
-                  ×
-                </button>
+                <h2 id="cookie-settings-title">
+                  {isFr
+                    ? "Gérer mes cookies"
+                    : "Customize Cookies"}
+                </h2>
               </div>
 
-              <p className="mt-5 max-w-xl text-sm leading-6 text-neutral-600">
+              <button
+                type="button"
+                className="cookie-modal-close"
+                onClick={() => setSettingsOpen(false)}
+                aria-label={isFr ? "Fermer" : "Close"}
+              >
+                ×
+              </button>
+
+              <p className="cookie-modal-intro">
                 {isFr
                   ? "Choisissez les catégories facultatives que vous souhaitez autoriser. Les technologies strictement nécessaires restent toujours actives."
                   : "Choose which optional categories you wish to allow. Strictly necessary technologies always remain active."}
               </p>
             </div>
 
-            <div className="divide-y divide-neutral-200 px-6 md:px-10">
+            <div className="cookie-preferences">
               <PreferenceRow
-                title={isFr ? "Strictement nécessaires" : "Strictly necessary"}
+                title={
+                  isFr
+                    ? "Strictement nécessaires"
+                    : "Strictly necessary"
+                }
                 description={
                   isFr
                     ? "Nécessaires au fonctionnement, à la sécurité et aux fonctionnalités essentielles du site."
@@ -222,11 +266,19 @@ export default function CookieConsent() {
                 }
                 checked
                 disabled
-                label={isFr ? "Toujours actif" : "Always active"}
+                label={
+                  isFr
+                    ? "Toujours actif"
+                    : "Always active"
+                }
               />
 
               <PreferenceRow
-                title={isFr ? "Mesure d’audience" : "Analytics"}
+                title={
+                  isFr
+                    ? "Mesure d’audience"
+                    : "Analytics"
+                }
                 description={
                   isFr
                     ? "Nous aide à comprendre l’utilisation du site et à améliorer ses performances."
@@ -242,7 +294,11 @@ export default function CookieConsent() {
               />
 
               <PreferenceRow
-                title={isFr ? "Contenus tiers" : "Third-party content"}
+                title={
+                  isFr
+                    ? "Contenus tiers"
+                    : "Third-party content"
+                }
                 description={
                   isFr
                     ? "Permet l’activation de certains contenus ou services fournis par des plateformes tierces."
@@ -258,35 +314,39 @@ export default function CookieConsent() {
               />
             </div>
 
-            <div className="flex flex-col gap-3 border-t border-neutral-200 px-6 py-6 sm:flex-row sm:justify-between md:px-10">
+            <div className="cookie-modal-actions">
               <button
                 type="button"
+                className="cookie-button cookie-button-light"
                 onClick={rejectOptional}
-                className="min-h-12 border border-neutral-300 px-6 text-sm font-medium transition hover:bg-neutral-100"
               >
                 {isFr ? "Tout refuser" : "Reject all"}
               </button>
 
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="cookie-modal-actions-right">
                 <button
                   type="button"
+                  className="cookie-button cookie-button-outline-dark"
                   onClick={() =>
                     save({
                       ...consent,
                       necessary: true,
                     })
                   }
-                  className="min-h-12 border border-black px-6 text-sm font-medium transition hover:bg-neutral-100"
                 >
-                  {isFr ? "Enregistrer mes choix" : "Save choices"}
+                  {isFr
+                    ? "Enregistrer mes choix"
+                    : "Save choices"}
                 </button>
 
                 <button
                   type="button"
+                  className="cookie-button cookie-button-dark"
                   onClick={acceptAll}
-                  className="min-h-12 bg-black px-6 text-sm font-semibold text-white transition hover:bg-neutral-800"
                 >
-                  {isFr ? "Tout accepter" : "Accept all"}
+                  {isFr
+                    ? "Tout accepter"
+                    : "Accept all"}
                 </button>
               </div>
             </div>
@@ -313,17 +373,15 @@ function PreferenceRow({
   onChange?: (checked: boolean) => void;
 }) {
   return (
-    <div className="flex gap-6 py-7">
-      <div className="flex-1">
-        <h3 className="text-base font-semibold">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-neutral-600">
-          {description}
-        </p>
+    <div className="cookie-preference">
+      <div className="cookie-preference-copy">
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
 
-      <div className="flex shrink-0 items-start">
+      <div className="cookie-preference-control">
         {disabled ? (
-          <span className="pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-neutral-500">
+          <span className="cookie-always-active">
             {label}
           </span>
         ) : (
@@ -331,16 +389,13 @@ function PreferenceRow({
             type="button"
             role="switch"
             aria-checked={checked}
-            onClick={() => onChange?.(!checked)}
-            className={`relative h-7 w-12 rounded-full transition ${
-              checked ? "bg-black" : "bg-neutral-300"
+            aria-label={title}
+            className={`cookie-switch ${
+              checked ? "is-active" : ""
             }`}
+            onClick={() => onChange?.(!checked)}
           >
-            <span
-              className={`absolute top-1 h-5 w-5 rounded-full bg-white transition ${
-                checked ? "left-6" : "left-1"
-              }`}
-            />
+            <span />
           </button>
         )}
       </div>

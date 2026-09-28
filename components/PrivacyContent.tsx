@@ -7,37 +7,44 @@ export default function PrivacyContent() {
   const isFr = locale === "fr";
 
   return (
-    <main className="bg-white text-black">
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-32 md:px-10 md:pb-32 md:pt-40">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
-            {isFr ? "Protection des données" : "Data protection"}
-          </p>
+    <main className="legal-page">
+      <section className="legal-hero">
+        <div className="legal-hero-inner">
+          <div className="legal-hero-copy">
+            <p className="legal-eyebrow">
+              {isFr
+                ? "Protection des données"
+                : "Data protection"}
+            </p>
 
-          <h1 className="text-5xl font-semibold tracking-[-0.04em] md:text-7xl">
-            {isFr ? "Politique de confidentialité" : "Privacy Policy"}
-          </h1>
+            <h1>
+              {isFr
+                ? "Politique de confidentialité"
+                : "Privacy Policy"}
+            </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-7 text-neutral-600 md:text-lg">
-            {isFr
-              ? "Cette politique explique comment Legacy Music Group collecte, utilise et protège les données personnelles traitées dans le cadre de son site."
-              : "This policy explains how Legacy Music Group collects, uses and protects personal data processed through its website."}
-          </p>
+            <p className="legal-intro">
+              {isFr
+                ? "Cette politique explique comment Legacy Music Group collecte, utilise et protège les données personnelles traitées dans le cadre de son site."
+                : "This policy explains how Legacy Music Group collects, uses and protects personal data processed through its website."}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-neutral-200">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-[260px_1fr] md:px-10 md:py-28">
-          <aside>
-            <p className="text-sm font-semibold">Legacy Music Group</p>
-            <p className="mt-2 text-sm leading-6 text-neutral-500">
+      <section className="legal-body">
+        <div className="legal-layout">
+          <aside className="legal-aside">
+            <strong>Legacy Music Group</strong>
+
+            <p>
               {isFr
                 ? "Dernière mise à jour : septembre 2026"
                 : "Last updated: September 2026"}
             </p>
           </aside>
 
-          <div className="max-w-3xl space-y-16">
+          <div className="legal-content">
             <Section
               title={
                 isFr
@@ -47,18 +54,19 @@ export default function PrivacyContent() {
             >
               <p>
                 {isFr
-                  ? "Les traitements de données personnelles réalisés dans le cadre de ce site sont mis en œuvre par Legacy Music Group (LMG), société en cours de constitution en France."
-                  : "Personal data processing carried out through this website is managed by Legacy Music Group (LMG), a company currently being incorporated in France."}
+                  ? "Les traitements de données personnelles décrits dans cette politique sont mis en œuvre dans le cadre du site Legacy Music Group."
+                  : "The personal data processing activities described in this policy are carried out in connection with the Legacy Music Group website."}
               </p>
 
               <p>
                 {isFr
-                  ? "Pour toute question relative à vos données personnelles ou pour exercer vos droits :"
-                  : "For any question relating to your personal data or to exercise your rights:"}{" "}
-                <a
-                  href="mailto:contact@legacymusicgroup.fr"
-                  className="underline underline-offset-4"
-                >
+                  ? "Legacy Music Group est une société en cours de constitution en France. Les informations légales définitives seront complétées à l’issue de son immatriculation."
+                  : "Legacy Music Group is a company currently being incorporated in France. Final legal information will be added once the company has been registered."}
+              </p>
+
+              <p>
+                {isFr ? "Contact : " : "Contact: "}
+                <a href="mailto:contact@legacymusicgroup.fr">
                   contact@legacymusicgroup.fr
                 </a>
               </p>
@@ -73,35 +81,39 @@ export default function PrivacyContent() {
             >
               <p>
                 {isFr
-                  ? "Selon votre utilisation du site, Legacy Music Group peut traiter les informations que vous transmettez volontairement, notamment lorsque vous utilisez le formulaire de contact."
-                  : "Depending on how you use the website, Legacy Music Group may process information that you voluntarily provide, particularly when using the contact form."}
+                  ? "Selon votre utilisation du site et les informations que vous choisissez de nous transmettre, nous pouvons notamment traiter :"
+                  : "Depending on how you use the website and the information you choose to provide, we may process:"}
               </p>
 
-              <ul className="list-disc space-y-2 pl-5">
+              <ul>
                 <li>
                   {isFr
-                    ? "Nom et prénom, lorsque renseignés."
-                    : "First and last name, when provided."}
+                    ? "votre nom et prénom ;"
+                    : "your first and last name;"}
                 </li>
+
                 <li>
                   {isFr
-                    ? "Adresse électronique."
-                    : "Email address."}
+                    ? "votre adresse e-mail ;"
+                    : "your email address;"}
                 </li>
+
                 <li>
                   {isFr
-                    ? "Organisation ou société, lorsque renseignée."
-                    : "Organisation or company, when provided."}
+                    ? "le nom de votre organisation ou projet, lorsque vous le renseignez ;"
+                    : "the name of your organisation or project, where provided;"}
                 </li>
+
                 <li>
                   {isFr
-                    ? "Objet et contenu de votre demande."
-                    : "Subject and content of your request."}
+                    ? "le contenu de votre demande ou de votre message ;"
+                    : "the content of your enquiry or message;"}
                 </li>
+
                 <li>
                   {isFr
-                    ? "Données techniques nécessaires au fonctionnement, à la sécurité et à l’administration du site."
-                    : "Technical data required for the operation, security and administration of the website."}
+                    ? "certaines données techniques nécessaires au fonctionnement, à la sécurité et à la maintenance du site."
+                    : "certain technical data required for the operation, security and maintenance of the website."}
                 </li>
               </ul>
             </Section>
@@ -109,60 +121,40 @@ export default function PrivacyContent() {
             <Section
               title={
                 isFr
-                  ? "3. Finalités et bases légales"
+                  ? "3. Finalités et bases juridiques"
                   : "3. Purposes and legal bases"
               }
             >
               <p>
                 {isFr
-                  ? "Les données personnelles sont traitées uniquement lorsqu’une base légale le permet et pour des finalités déterminées."
-                  : "Personal data is processed only where a legal basis permits it and for specified purposes."}
+                  ? "Les données peuvent être traitées afin de répondre aux demandes reçues, gérer les échanges avec nos interlocuteurs, assurer le fonctionnement et la sécurité du site et, lorsque cela est pertinent, préparer ou exécuter une relation précontractuelle."
+                  : "Data may be processed in order to respond to enquiries, manage communications with our contacts, operate and secure the website and, where relevant, take steps prior to entering into a contractual relationship."}
               </p>
 
-              <ul className="list-disc space-y-3 pl-5">
-                <li>
-                  {isFr
-                    ? "Répondre aux demandes adressées à LMG et assurer le suivi des échanges : intérêt légitime de LMG à gérer ses relations et communications professionnelles."
-                    : "Responding to enquiries and managing communications: LMG’s legitimate interest in managing its professional relationships and communications."}
-                </li>
-
-                <li>
-                  {isFr
-                    ? "Traiter une demande liée à une prestation, un projet ou une future relation contractuelle : mesures précontractuelles prises à la demande de la personne concernée, lorsque cette base est applicable."
-                    : "Handling a request relating to a service, project or potential contractual relationship: pre-contractual measures taken at the request of the data subject, where applicable."}
-                </li>
-
-                <li>
-                  {isFr
-                    ? "Assurer la sécurité, la disponibilité et le bon fonctionnement du site : intérêt légitime de LMG à sécuriser ses services numériques."
-                    : "Maintaining the security, availability and proper functioning of the website: LMG’s legitimate interest in securing its digital services."}
-                </li>
-
-                <li>
-                  {isFr
-                    ? "Utiliser des traceurs non essentiels, lorsqu’ils sont activés : consentement."
-                    : "Using non-essential tracking technologies, when enabled: consent."}
-                </li>
-              </ul>
+              <p>
+                {isFr
+                  ? "Selon le traitement concerné, la base juridique peut être notre intérêt légitime à répondre aux demandes et à assurer la sécurité du site, l’exécution de mesures précontractuelles prises à votre demande ou votre consentement lorsqu’il est requis pour certaines technologies facultatives."
+                  : "Depending on the processing activity, the legal basis may be our legitimate interest in responding to enquiries and securing the website, steps taken at your request prior to entering into a contract, or your consent where required for certain optional technologies."}
+              </p>
             </Section>
 
             <Section
               title={
                 isFr
                   ? "4. Destinataires des données"
-                  : "4. Data recipients"
+                  : "4. Recipients of personal data"
               }
             >
               <p>
                 {isFr
-                  ? "Les données sont accessibles uniquement aux personnes habilitées au sein de Legacy Music Group et, lorsque cela est nécessaire, aux prestataires techniques intervenant pour le fonctionnement, l’hébergement, la sécurité ou la maintenance du site."
-                  : "Data is accessible only to authorised persons within Legacy Music Group and, where necessary, to technical service providers involved in the operation, hosting, security or maintenance of the website."}
+                  ? "Les données sont accessibles aux personnes autorisées au sein de Legacy Music Group lorsqu’elles en ont besoin dans le cadre de leurs fonctions."
+                  : "Personal data may be accessed by authorised persons within Legacy Music Group where necessary for their duties."}
               </p>
 
               <p>
                 {isFr
-                  ? "Ces prestataires n’accèdent aux données que dans la mesure nécessaire à l’exécution de leurs missions."
-                  : "These service providers may access data only to the extent necessary to perform their services."}
+                  ? "Elles peuvent également être traitées par des prestataires techniques intervenant pour l’hébergement, le fonctionnement, la sécurité ou la maintenance du site, dans la limite nécessaire à leurs missions."
+                  : "They may also be processed by technical service providers involved in hosting, operating, securing or maintaining the website, to the extent necessary for their services."}
               </p>
             </Section>
 
@@ -175,14 +167,14 @@ export default function PrivacyContent() {
             >
               <p>
                 {isFr
-                  ? "Les données sont conservées pendant une durée proportionnée à la finalité pour laquelle elles ont été collectées, puis supprimées ou archivées lorsque la loi l’exige."
-                  : "Personal data is retained only for a period proportionate to the purpose for which it was collected and is then deleted or archived where required by law."}
+                  ? "Les données sont conservées pendant une durée proportionnée à la finalité pour laquelle elles ont été collectées."
+                  : "Personal data is retained for a period proportionate to the purpose for which it was collected."}
               </p>
 
               <p>
                 {isFr
-                  ? "Les demandes de contact sans relation contractuelle ultérieure sont conservées pendant le temps nécessaire au traitement et au suivi de la demande, sauf nécessité de conservation plus longue justifiée par une obligation légale ou la défense de droits."
-                  : "Contact enquiries that do not lead to a contractual relationship are retained for the time necessary to process and follow up the request, unless a longer period is justified by a legal obligation or the establishment, exercise or defence of legal claims."}
+                  ? "Les informations transmises dans le cadre d’une prise de contact sont conservées pendant la durée nécessaire au traitement et au suivi de la demande, sauf lorsqu’une durée différente est nécessaire pour respecter une obligation légale ou assurer la constatation, l’exercice ou la défense de droits en justice."
+                  : "Information submitted through an enquiry is retained for the period necessary to handle and follow up the request, unless a different period is required to comply with a legal obligation or to establish, exercise or defend legal claims."}
               </p>
             </Section>
 
@@ -195,42 +187,87 @@ export default function PrivacyContent() {
             >
               <p>
                 {isFr
-                  ? "Certains prestataires techniques utilisés pour le fonctionnement du site peuvent traiter des données depuis des pays situés en dehors de l’Espace économique européen. Lorsque de tels transferts ont lieu, LMG veille à ce qu’ils reposent sur un mécanisme reconnu par la réglementation applicable en matière de protection des données."
-                  : "Some technical service providers used to operate the website may process data from countries outside the European Economic Area. Where such transfers occur, LMG seeks to ensure that an appropriate transfer mechanism recognised under applicable data protection law is used."}
+                  ? "Certains prestataires techniques peuvent traiter des données depuis des pays situés en dehors de l’Espace économique européen."
+                  : "Some technical service providers may process data from countries outside the European Economic Area."}
+              </p>
+
+              <p>
+                {isFr
+                  ? "Lorsque la réglementation applicable l’exige, ces transferts doivent être encadrés par un mécanisme approprié de protection des données."
+                  : "Where required by applicable law, such transfers must be covered by an appropriate data protection mechanism."}
               </p>
             </Section>
 
             <Section
-              title={isFr ? "7. Vos droits" : "7. Your rights"}
+              title={
+                isFr
+                  ? "7. Vos droits"
+                  : "7. Your rights"
+              }
             >
               <p>
                 {isFr
-                  ? "Dans les conditions prévues par la réglementation applicable, vous pouvez notamment disposer d’un droit d’accès, de rectification, d’effacement, de limitation et d’opposition au traitement de vos données, ainsi que d’un droit à la portabilité lorsque celui-ci est applicable."
-                  : "Subject to the conditions provided by applicable data protection law, you may have rights of access, rectification, erasure, restriction and objection, as well as a right to data portability where applicable."}
+                  ? "Dans les conditions prévues par la réglementation applicable, vous pouvez notamment disposer des droits suivants :"
+                  : "Subject to the conditions provided by applicable law, you may have the following rights:"}
               </p>
+
+              <ul>
+                <li>
+                  {isFr
+                    ? "droit d’accès à vos données ;"
+                    : "the right to access your data;"}
+                </li>
+
+                <li>
+                  {isFr
+                    ? "droit de rectification ;"
+                    : "the right to rectification;"}
+                </li>
+
+                <li>
+                  {isFr
+                    ? "droit à l’effacement ;"
+                    : "the right to erasure;"}
+                </li>
+
+                <li>
+                  {isFr
+                    ? "droit à la limitation du traitement ;"
+                    : "the right to restriction of processing;"}
+                </li>
+
+                <li>
+                  {isFr
+                    ? "droit d’opposition ;"
+                    : "the right to object;"}
+                </li>
+
+                <li>
+                  {isFr
+                    ? "droit à la portabilité lorsque celui-ci est applicable ;"
+                    : "the right to data portability where applicable;"}
+                </li>
+
+                <li>
+                  {isFr
+                    ? "droit de retirer votre consentement à tout moment lorsqu’un traitement repose sur celui-ci."
+                    : "the right to withdraw your consent at any time where processing is based on consent."}
+                </li>
+              </ul>
 
               <p>
                 {isFr
-                  ? "Lorsque le traitement repose sur votre consentement, vous pouvez le retirer à tout moment, sans remettre en cause la licéité du traitement effectué avant ce retrait."
-                  : "Where processing is based on your consent, you may withdraw that consent at any time without affecting the lawfulness of processing carried out before withdrawal."}
-              </p>
-
-              <p>
-                {isFr
-                  ? "Pour exercer vos droits :"
-                  : "To exercise your rights:"}{" "}
-                <a
-                  href="mailto:contact@legacymusicgroup.fr"
-                  className="underline underline-offset-4"
-                >
+                  ? "Pour exercer vos droits, vous pouvez nous contacter à l’adresse suivante : "
+                  : "To exercise your rights, you may contact us at: "}
+                <a href="mailto:contact@legacymusicgroup.fr">
                   contact@legacymusicgroup.fr
                 </a>
               </p>
 
               <p>
                 {isFr
-                  ? "Vous disposez également du droit d’introduire une réclamation auprès de la CNIL."
-                  : "You also have the right to lodge a complaint with the French data protection authority (CNIL)."}
+                  ? "Vous pouvez également introduire une réclamation auprès de la CNIL si vous estimez que le traitement de vos données personnelles ne respecte pas la réglementation applicable."
+                  : "You may also lodge a complaint with the CNIL if you believe that the processing of your personal data does not comply with applicable data protection law."}
               </p>
             </Section>
 
@@ -239,42 +276,38 @@ export default function PrivacyContent() {
             >
               <p>
                 {isFr
-                  ? "Legacy Music Group met en œuvre des mesures techniques et organisationnelles destinées à protéger les données personnelles contre la perte, l’accès non autorisé, l’altération ou la divulgation."
-                  : "Legacy Music Group implements technical and organisational measures designed to protect personal data against loss, unauthorised access, alteration or disclosure."}
+                  ? "Legacy Music Group met en œuvre des mesures techniques et organisationnelles adaptées afin de protéger les données personnelles contre l’accès non autorisé, la perte, l’altération ou la divulgation."
+                  : "Legacy Music Group implements appropriate technical and organisational measures designed to protect personal data against unauthorised access, loss, alteration or disclosure."}
               </p>
             </Section>
 
             <Section
-              title={
-                isFr
-                  ? "9. Cookies et technologies similaires"
-                  : "9. Cookies and similar technologies"
-              }
+              title={isFr ? "9. Cookies" : "9. Cookies"}
             >
               <p>
                 {isFr
-                  ? "Le site peut utiliser des cookies ou technologies similaires nécessaires à son fonctionnement ainsi que, sous réserve de votre choix lorsqu’il est requis, des traceurs destinés à d’autres finalités."
-                  : "The website may use cookies or similar technologies required for its operation and, subject to your choice where required, tracking technologies for other purposes."}
+                  ? "Le site peut utiliser des technologies strictement nécessaires à son fonctionnement ainsi que, le cas échéant, des technologies facultatives soumises à votre choix."
+                  : "The website may use technologies that are strictly necessary for its operation and, where applicable, optional technologies subject to your choice."}
               </p>
 
               <p>
                 {isFr
-                  ? "Pour plus d’informations, consultez la Politique de cookies et utilisez l’outil Gérer mes cookies disponible en bas du site."
-                  : "For more information, see our Cookie Policy and use the Manage Cookies control available at the bottom of the website."}
+                  ? "Pour plus d’informations, consultez notre Politique de cookies. Vous pouvez également modifier vos préférences depuis l’option « Gérer mes cookies » disponible dans le pied de page."
+                  : "For more information, please refer to our Cookie Policy. You can also change your preferences using the “Customize Cookies” option available in the website footer."}
               </p>
             </Section>
 
             <Section
               title={
                 isFr
-                  ? "10. Modification de cette politique"
+                  ? "10. Modification de la politique"
                   : "10. Changes to this policy"
               }
             >
               <p>
                 {isFr
-                  ? "Cette politique peut être mise à jour afin de tenir compte de l’évolution du site, des traitements réalisés ou du cadre réglementaire applicable. La date de dernière mise à jour figure en haut de cette page."
-                  : "This policy may be updated to reflect changes to the website, data processing activities or applicable regulations. The latest update date is shown at the top of this page."}
+                  ? "Cette politique peut être mise à jour afin de tenir compte de l’évolution du site, de nos pratiques ou des exigences réglementaires applicables."
+                  : "This policy may be updated to reflect changes to the website, our practices or applicable regulatory requirements."}
               </p>
             </Section>
           </div>
@@ -292,12 +325,10 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold tracking-[-0.025em] md:text-3xl">
-        {title}
-      </h2>
+    <section className="legal-section">
+      <h2>{title}</h2>
 
-      <div className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600 md:text-base">
+      <div className="legal-section-copy">
         {children}
       </div>
     </section>

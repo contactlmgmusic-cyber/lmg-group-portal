@@ -7,40 +7,42 @@ export default function AccessibilityPage() {
   const isFr = locale === "fr";
 
   return (
-    <main className="bg-white text-black">
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-32 md:px-10 md:pb-32 md:pt-40">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
-            {isFr ? "Expérience numérique" : "Digital experience"}
-          </p>
+    <main className="legal-page">
+      <section className="legal-hero">
+        <div className="legal-hero-inner">
+          <div className="legal-hero-copy">
+            <p className="legal-eyebrow">
+              {isFr
+                ? "Expérience numérique"
+                : "Digital experience"}
+            </p>
 
-          <h1 className="text-5xl font-semibold tracking-[-0.04em] md:text-7xl">
-            {isFr ? "Accessibilité" : "Accessibility"}
-          </h1>
+            <h1>
+              {isFr ? "Accessibilité" : "Accessibility"}
+            </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-7 text-neutral-600 md:text-lg">
-            {isFr
-              ? "Legacy Music Group souhaite proposer une expérience numérique claire, utilisable et accessible au plus grand nombre."
-              : "Legacy Music Group aims to provide a clear, usable and accessible digital experience to as many people as possible."}
-          </p>
+            <p className="legal-intro">
+              {isFr
+                ? "Legacy Music Group souhaite proposer une expérience numérique claire, utilisable et accessible au plus grand nombre."
+                : "Legacy Music Group aims to provide a clear, usable and accessible digital experience to as many people as possible."}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-neutral-200">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-[260px_1fr] md:px-10 md:py-28">
-          <aside>
-            <p className="text-sm font-semibold">
-              Legacy Music Group
-            </p>
+      <section className="legal-body">
+        <div className="legal-layout">
+          <aside className="legal-aside">
+            <strong>Legacy Music Group</strong>
 
-            <p className="mt-2 text-sm leading-6 text-neutral-500">
+            <p>
               {isFr
                 ? "Accessibilité du site"
                 : "Website accessibility"}
             </p>
           </aside>
 
-          <div className="max-w-3xl space-y-16">
+          <div className="legal-content">
             <Section
               title={
                 isFr
@@ -102,10 +104,7 @@ export default function AccessibilityPage() {
                   : "If you experience difficulty accessing content or using a feature of the website, you can contact us. We will make reasonable efforts to provide a solution or an alternative means of access where possible."}
               </p>
 
-              <a
-                href="mailto:contact@legacymusicgroup.fr"
-                className="inline-block underline underline-offset-4"
-              >
+              <a href="mailto:contact@legacymusicgroup.fr">
                 contact@legacymusicgroup.fr
               </a>
             </Section>
@@ -124,12 +123,10 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold tracking-[-0.025em] md:text-3xl">
-        {title}
-      </h2>
+    <section className="legal-section">
+      <h2>{title}</h2>
 
-      <div className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600 md:text-base">
+      <div className="legal-section-copy">
         {children}
       </div>
     </section>
