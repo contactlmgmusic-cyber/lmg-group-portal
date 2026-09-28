@@ -1,12 +1,24 @@
 import { getEditorial } from "@/lib/editorial.server";
-import Link from "next/link";
-import PageIntro from "./PageIntro";
-import NextStep from "./NextStep";
-import ProjectCard from "./ProjectCard";
-import { divisions } from "@/lib/content";
-export default async function DivisionPage({ slug }: { slug: typeof divisions[number]["slug"] }) {
- const {projects}=await getEditorial();
- const division = divisions.find(d => d.slug === slug)!;
- const project = projects.find(p => p.slug === division.project);
- return <main id="contenu"><PageIntro label={`LMG ${division.name}`} parent={{href:"/poles",label:"Nos activités"}} title={division.headline} description={division.description}/><div className="division-bar"><span>{division.number} / 03</span><strong>{division.field}</strong><a href={division.website} target="_blank" rel="noopener noreferrer">{slug === "entertainment" ? "Suivre le pôle" : "Visiter le site du pôle"}<span aria-hidden="true">↗</span><span className="sr-only"> (nouvel onglet)</span></a></div><section className="section"><div className="section-heading"><p className="eyebrow">NOS MÉTIERS</p><h2>Une expertise.<br/>Plusieurs dimensions.</h2></div><div className="expertise-grid">{division.skills.map(([title,desc],i) => <article key={title}><span className="index">0{i+1}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></section>{project ? <section className="section section-ice featured-project"><div><p className="eyebrow">DANS LES PROJETS</p><h2>{slug === "music" ? "La création prend forme." : "Des idées à l’expérience."}</h2><p className="body-copy">{project.intro}</p><Link href="/projets" className="text-link">Tous les projets <span aria-hidden="true">↗</span></Link></div><ProjectCard project={project}/></section> : slug === "entertainment" ? <section className="section section-ice"><div className="section-heading"><p className="eyebrow">DU BRIEF À LA SCÈNE</p><h2>Le bon format.<br/>Au bon moment.</h2></div><div className="steps-grid">{[["Votre événement", "Le lieu, la date, le public et le budget posent les bases de notre échange."],["La proposition artistique", "Les profils et formats envisagés sont mis en regard de vos attentes."],["La préparation", "Les besoins artistiques et les conditions d’intervention sont précisés ensemble."]].map(([title,desc],i)=><article key={title}><span>0{i+1}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></section> : null}<section className="section sibling-section"><p className="eyebrow">L’ÉCOSYSTÈME LMG</p><h2>Explorer les autres pôles.</h2><div className="sibling-links">{divisions.filter(d=>d.slug!==slug).map(d=><Link key={d.slug} href={`/poles/${d.slug}`}><span>{d.field}</span><strong>LMG {d.name}</strong><b aria-hidden="true">↗</b></Link>)}</div></section><NextStep title={division.contact} href={`/contact#${slug}`} label="Trouver le bon contact"/></main>;
+import DivisionContent from "./DivisionContent";
+
+export default async function DivisionPage({
+  slug,
+}: {
+  slug: "music" | "agency";
+}) {
+  const { projects } = await getEditorial();
+
+  const project =
+    projects.find((item) =>
+      slug === "music"
+        ? item.division?.toLowerCase().includes("music")
+        : item.division?.toLowerCase().includes("agency")
+    ) ?? null;
+
+  return (
+    <DivisionContent
+      slug={slug}
+      project={project}
+    />
+  );
 }

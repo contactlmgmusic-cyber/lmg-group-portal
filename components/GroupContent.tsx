@@ -1,0 +1,547 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+
+import { useLanguage } from "@/components/LanguageProvider";
+import NextStep from "@/components/NextStep";
+import PageIntro from "@/components/PageIntro";
+
+export default function GroupContent() {
+  const { locale } = useLanguage();
+
+  const content =
+    locale === "en"
+      ? {
+          intro: {
+            label: "About LMG Group",
+            title: "Independent in spirit.\nUnited in action.",
+            description:
+              "Legacy Music Group brings together music, live entertainment and creative expertise. Two complementary businesses supporting artists, brands and projects from vision to audience.",
+          },
+
+          chaptersLabel: "EXPLORE THE GROUP",
+
+          chapters: [
+            ["vision", "Our Vision"],
+            ["ecosysteme", "Our Businesses"],
+            ["approche", "Our Approach"],
+            ["direction", "Leadership"],
+          ] as const,
+
+          vision: {
+            eyebrow: "01 / OUR VISION",
+            title: (
+              <>
+                Give ideas
+                <br />
+                direction.
+                <br />
+                <span>And talent, a horizon.</span>
+              </>
+            ),
+            paragraphs: [
+              "Music, a live experience, a brand identity: every project begins with an intention. Our ambition is to give it the means to express itself without losing what makes it distinctive.",
+              "LMG connects artist development, live entertainment and communication. The Group creates bridges between these areas of expertise while preserving the identity of each business and the personality of every project.",
+            ],
+            signature: "Music. Live. Creative.",
+          },
+
+          ecosystem: {
+            eyebrow: "02 / THE LMG ECOSYSTEM",
+            title: (
+              <>
+                Two businesses.
+                <br />
+                One shared ambition.
+              </>
+            ),
+            intro:
+              "Supporting creation, giving it form and connecting it with its audience. Each LMG business brings its own expertise, teams and perspective.",
+
+            businesses: [
+              {
+                number: "01",
+                href: "/poles/music",
+                name: "MUSIC",
+                field:
+                  "Music · Artist Development · Live Entertainment",
+                description:
+                  "LMG Music develops artists, projects and experiences across recorded music and live entertainment, from artistic direction to audience connection.",
+                link: "Discover LMG Music",
+              },
+              {
+                number: "02",
+                href: "/poles/agency",
+                name: "AGENCY",
+                field: "Strategy · Creative · Digital",
+                description:
+                  "LMG Agency helps brands, projects and talents define their identity, build their communication and create meaningful digital experiences.",
+                link: "Discover LMG Agency",
+              },
+            ],
+
+            connectionEyebrow: "WHAT CONNECTS US",
+            connection:
+              "A shared focus on project identity, the quality of its expression and its relationship with audiences. Collaboration between our businesses is built around these needs.",
+          },
+
+          approach: {
+            eyebrow: "03 / OUR APPROACH",
+            title: (
+              <>
+                A vision
+                <br />
+                translated into action.
+              </>
+            ),
+
+            principles: [
+              {
+                title: "Understand",
+                subtitle: "Identity before execution.",
+                description:
+                  "Every collaboration begins with the project: its world, ambitions and the people it wants to reach. Understanding these elements gives direction to the work.",
+              },
+              {
+                title: "Connect",
+                subtitle: "The right expertise, at the right time.",
+                description:
+                  "Music, live, image and digital work together. Our businesses can collaborate whenever it serves the project, with a clear role for each team.",
+              },
+              {
+                title: "Build",
+                subtitle: "A journey, step by step.",
+                description:
+                  "A release, an event or a website is one moment in a wider journey. Our approach connects these moments and prepares what comes next with consistency.",
+              },
+            ],
+
+            projects:
+              "See our approach through our projects",
+          },
+
+          leadership: {
+            eyebrow: "04 / LEADERSHIP",
+            title: (
+              <>
+                The people
+                <br />
+                behind the vision.
+              </>
+            ),
+
+            presidentRole: "PRESIDENT / LMG GROUP",
+            presidentDescription:
+              "President and founder of LMG.",
+
+            directionRole: "MANAGEMENT / MUSIC & AGENCY",
+            directionDescription:
+              "Co-founder of LMG Agency and Managing Director of LMG Music.",
+
+            contact: "Connect with the Group",
+          },
+
+          nextStep: {
+            title: "What comes next, we build together.",
+            description:
+              "An artistic project, a live experience or a brand ready to grow? Discover LMG's expertise and the team that can support it.",
+            label: "Explore our businesses",
+          },
+
+          pageNavigationLabel: "On this page",
+        }
+      : {
+          intro: {
+            label: "À propos de LMG Group",
+            title: "Indépendants d’esprit.\nEnsemble dans l’action.",
+            description:
+              "Legacy Music Group réunit musique, live et création. Deux pôles complémentaires pour accompagner les talents, les marques et leurs projets jusqu’à la rencontre avec le public.",
+          },
+
+          chaptersLabel: "EXPLORER LE GROUPE",
+
+          chapters: [
+            ["vision", "Notre vision"],
+            ["ecosysteme", "Nos pôles"],
+            ["approche", "Notre approche"],
+            ["direction", "La direction"],
+          ] as const,
+
+          vision: {
+            eyebrow: "01 / NOTRE VISION",
+            title: (
+              <>
+                Donner aux idées
+                <br />
+                une direction.
+                <br />
+                <span>Et aux talents, un horizon.</span>
+              </>
+            ),
+            paragraphs: [
+              "Une musique, une expérience live, une identité de marque : chaque projet porte une intention. Notre ambition est de lui donner les moyens de s’exprimer, sans perdre ce qui le rend singulier.",
+              "LMG fait dialoguer le développement artistique, le live et la communication. Le groupe crée des passerelles entre ces métiers, tout en laissant à chaque pôle son expertise et à chaque projet sa personnalité.",
+            ],
+            signature: "Musique. Live. Création.",
+          },
+
+          ecosystem: {
+            eyebrow: "02 / L’ÉCOSYSTÈME LMG",
+            title: (
+              <>
+                Deux pôles.
+                <br />
+                Une ambition commune.
+              </>
+            ),
+            intro:
+              "Accompagner la création, lui donner une forme et la faire rencontrer son public. Chaque pôle intervient avec ses métiers, ses équipes et son univers.",
+
+            businesses: [
+              {
+                number: "01",
+                href: "/poles/music",
+                name: "MUSIC",
+                field:
+                  "Musique · Développement artistique · Live Entertainment",
+                description:
+                  "LMG Music développe les artistes, les projets et les expériences autour de la musique et du live, de la direction artistique jusqu’à la rencontre avec le public.",
+                link: "Découvrir LMG Music",
+              },
+              {
+                number: "02",
+                href: "/poles/agency",
+                name: "AGENCY",
+                field: "Stratégie · Création · Digital",
+                description:
+                  "LMG Agency accompagne les marques, les projets et les talents dans leur identité, leur communication et la création d’expériences digitales.",
+                link: "Découvrir LMG Agency",
+              },
+            ],
+
+            connectionEyebrow: "CE QUI NOUS RELIE",
+            connection:
+              "Une même attention à l’identité du projet, à la qualité de son expression et à sa relation avec le public. Les collaborations entre pôles se construisent autour de ces besoins.",
+          },
+
+          approach: {
+            eyebrow: "03 / NOTRE APPROCHE",
+            title: (
+              <>
+                Une vision qui
+                <br />
+                se traduit en actions.
+              </>
+            ),
+
+            principles: [
+              {
+                title: "Comprendre",
+                subtitle: "L’identité avant les moyens.",
+                description:
+                  "Chaque collaboration commence par le projet : son univers, ses ambitions et les personnes auxquelles il s’adresse. Cette compréhension donne une direction au travail.",
+              },
+              {
+                title: "Relier",
+                subtitle: "Les bons métiers, au bon moment.",
+                description:
+                  "Musique, live, image et digital se répondent. Les pôles peuvent travailler ensemble quand cela sert le projet, avec un rôle clair pour chacun.",
+              },
+              {
+                title: "Construire",
+                subtitle: "Une trajectoire, étape par étape.",
+                description:
+                  "Une sortie, un événement ou un site est une étape dans un parcours. Notre approche consiste à articuler ces moments et à préparer la suite avec cohérence.",
+              },
+            ],
+
+            projects:
+              "Voir cette approche à travers nos projets",
+          },
+
+          leadership: {
+            eyebrow: "04 / LA DIRECTION",
+            title: (
+              <>
+                Les personnes
+                <br />
+                derrière la vision.
+              </>
+            ),
+
+            presidentRole: "PRÉSIDENCE / LMG GROUP",
+            presidentDescription:
+              "Président et fondateur de LMG.",
+
+            directionRole: "DIRECTION / MUSIC & AGENCY",
+            directionDescription:
+              "Cofondatrice de LMG Agency et directrice générale de LMG Music.",
+
+            contact: "Entrer en relation avec le groupe",
+          },
+
+          nextStep: {
+            title: "La suite se construit ensemble.",
+            description:
+              "Un projet artistique, une expérience live ou une marque à développer : découvrez les métiers de LMG et le pôle qui peut vous accompagner.",
+            label: "Explorer nos activités",
+          },
+
+          pageNavigationLabel: "Dans cette page",
+        };
+
+  return (
+    <main
+      id="contenu"
+      className="about-page"
+    >
+      <PageIntro
+        label={content.intro.label}
+        title={content.intro.title}
+        description={content.intro.description}
+      />
+
+      <nav
+        className="about-chapters"
+        aria-label={content.pageNavigationLabel}
+      >
+        <span>{content.chaptersLabel}</span>
+
+        {content.chapters.map(([id, label], i) => (
+          <a
+            key={id}
+            href={`#${id}`}
+          >
+            <span>
+              0{i + 1}
+            </span>
+
+            {label}
+
+            <span aria-hidden="true">
+              ↓
+            </span>
+          </a>
+        ))}
+      </nav>
+
+      <section
+        id="vision"
+        className="section about-vision"
+        aria-labelledby="vision-title"
+      >
+        <div className="about-vision-top">
+          <p className="eyebrow">
+            {content.vision.eyebrow}
+          </p>
+
+          <Image
+            src="/images/lmg-group-white.webp"
+            alt=""
+            width={100}
+            height={100}
+          />
+        </div>
+
+        <h2 id="vision-title">
+          {content.vision.title}
+        </h2>
+
+        <div className="about-vision-copy">
+          {content.vision.paragraphs.map(
+            (paragraph) => (
+              <p key={paragraph}>
+                {paragraph}
+              </p>
+            )
+          )}
+        </div>
+
+        <p className="about-signature">
+          {content.vision.signature}
+        </p>
+      </section>
+
+      <section
+        id="ecosysteme"
+        className="section"
+        aria-labelledby="ecosystem-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            {content.ecosystem.eyebrow}
+          </p>
+
+          <h2 id="ecosystem-title">
+            {content.ecosystem.title}
+          </h2>
+        </div>
+
+        <p className="about-section-intro">
+          {content.ecosystem.intro}
+        </p>
+
+        <div className="about-divisions">
+          {content.ecosystem.businesses.map(
+            (business) => (
+              <Link
+                href={business.href}
+                key={business.name}
+                className="about-division"
+              >
+                <span className="index">
+                  {business.number} / LMG GROUP
+                </span>
+
+                <h3>
+                  LMG
+                  <br />
+                  {business.name}
+                </h3>
+
+                <p className="about-division-field">
+                  {business.field}
+                </p>
+
+                <p>
+                  {business.description}
+                </p>
+
+                <span className="about-division-link">
+                  {business.link}{" "}
+                  <span aria-hidden="true">
+                    ↗
+                  </span>
+                </span>
+              </Link>
+            )
+          )}
+        </div>
+
+        <div className="about-connection">
+          <p className="eyebrow">
+            {content.ecosystem.connectionEyebrow}
+          </p>
+
+          <p>
+            {content.ecosystem.connection}
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="approche"
+        className="section section-ice"
+        aria-labelledby="approach-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            {content.approach.eyebrow}
+          </p>
+
+          <h2 id="approach-title">
+            {content.approach.title}
+          </h2>
+        </div>
+
+        <div className="expertise-grid about-principles">
+          {content.approach.principles.map(
+            (principle, i) => (
+              <article key={principle.title}>
+                <span className="index">
+                  0{i + 1}
+                </span>
+
+                <h3>
+                  {principle.title}
+                </h3>
+
+                <h4>
+                  {principle.subtitle}
+                </h4>
+
+                <p>
+                  {principle.description}
+                </p>
+              </article>
+            )
+          )}
+        </div>
+
+        <Link
+          href="/projets"
+          className="text-link about-project-link"
+        >
+          {content.approach.projects}{" "}
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </Link>
+      </section>
+
+      <section
+        id="direction"
+        className="section"
+        aria-labelledby="leadership-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            {content.leadership.eyebrow}
+          </p>
+
+          <h2 id="leadership-title">
+            {content.leadership.title}
+          </h2>
+        </div>
+
+        <div className="leadership about-leadership">
+          <article>
+            <span className="eyebrow">
+              {content.leadership.presidentRole}
+            </span>
+
+            <h3>
+              Joseph Kayaya
+            </h3>
+
+            <p>
+              {content.leadership.presidentDescription}
+            </p>
+          </article>
+
+          <article>
+            <span className="eyebrow">
+              {content.leadership.directionRole}
+            </span>
+
+            <h3>
+              Yliana Faidherbe
+            </h3>
+
+            <p>
+              {content.leadership.directionDescription}
+            </p>
+          </article>
+        </div>
+
+        <Link
+          href="/contact"
+          className="text-link"
+        >
+          {content.leadership.contact}{" "}
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </Link>
+      </section>
+
+      <NextStep
+        title={content.nextStep.title}
+        description={content.nextStep.description}
+        href="/poles"
+        label={content.nextStep.label}
+      />
+    </main>
+  );
+}

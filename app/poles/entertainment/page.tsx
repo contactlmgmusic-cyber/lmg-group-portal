@@ -1,7 +1,5 @@
-export const dynamic = "force-dynamic";
-import { pageMetadata } from "@/lib/metadata";
-import DivisionPage from "@/components/DivisionPage";
+import { permanentRedirect } from "next/navigation";
 
-export default function Page() { return <DivisionPage slug="entertainment"/>; }
-
-export const metadata = pageMetadata("LMG Entertainment","Booking, programmation et coordination artistique : découvrez LMG Entertainment.","/poles/entertainment");
+export default function Page() {
+  permanentRedirect("/poles/music");
+}

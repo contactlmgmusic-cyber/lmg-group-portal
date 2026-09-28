@@ -1,14 +1,12 @@
-import Link from "next/link";
-import CopyEmail from "@/components/CopyEmail";
+import ContactContent from "@/components/ContactContent";
 import { pageMetadata } from "@/lib/metadata";
-import { divisions, contactEmail } from "@/lib/content";
 
-const categories = [
-  { id: "music", title: "Musique & développement artistique", description: "LMG Music — Artistes, projets musicaux et développement artistique.", href: divisions[0].website, external: true, label: "Site LMG Music" },
-  { id: "entertainment", title: "Entertainment & expériences live", description: "LMG Entertainment — Booking, programmation et coordination artistique.", href: `mailto:${contactEmail}?subject=${encodeURIComponent("LMG Entertainment — Prise de contact")}`, external: false, label: "Contact par e-mail" },
-  { id: "agency", title: "Communication, création & digital", description: "LMG Agency — Stratégie, identité de marque, contenus et expériences digitales.", href: divisions[2].website, external: true, label: "Site LMG Agency" },
-];
-export const metadata = pageMetadata("Contact us", "Contactez Legacy Music Group : musique, entertainment, communication, presse et demandes générales. Choisissez la catégorie adaptée à votre demande.", "/contact");
+export const metadata = pageMetadata(
+  "Contact Us",
+  "Contact Legacy Music Group for music, live entertainment, creative, digital, press, partnerships and general inquiries.",
+  "/contact"
+);
+
 export default function Page() {
-  return <main id="contenu" className="contact-directory-page"><div className="contact-breadcrumbs"><nav className="breadcrumbs" aria-label="Fil d’Ariane"><Link href="/">Accueil</Link><span aria-hidden="true">/</span><span aria-current="page">Contact us</span></nav></div><section className="section contact-directory"><header><p className="eyebrow">LEGACY MUSIC GROUP</p><h1>Contact us</h1><p>Pour contacter LMG, choisissez la catégorie qui correspond à votre demande. Vous pourrez rejoindre le site du pôle concerné ou écrire directement au groupe.</p></header><ul className="contact-category-list">{categories.map(category => <li id={category.id} key={category.id}><a href={category.href} target={category.external ? "_blank" : undefined} rel={category.external ? "noopener noreferrer" : undefined}><span aria-hidden="true">›</span>{category.title}<span className="sr-only"> — {category.label}{category.external ? " (nouvel onglet)" : ""}</span></a><p>{category.description}</p><span className="contact-destination">{category.label}<span aria-hidden="true"> {category.external ? "↗" : "→"}</span></span></li>)}<li id="presse"><Link href="/presse"><span aria-hidden="true">›</span>Presse & médias</Link><p>Présentation du groupe, logos, demandes d’interview et ressources pour vos publications.</p><span className="contact-destination">Espace presse <span aria-hidden="true">→</span></span></li><li id="groupe"><a href={`mailto:${contactEmail}?subject=${encodeURIComponent("LMG Group — Demande générale")}`}><span aria-hidden="true">›</span>Groupe, partenariats & autres demandes</a><p>Une question sur Legacy Music Group, une proposition de partenariat ou une demande qui concerne plusieurs pôles.</p><span className="contact-destination">Contact par e-mail <span aria-hidden="true">→</span></span></li></ul><aside className="contact-directory-help" aria-labelledby="contact-help-title"><div><h2 id="contact-help-title">Vous ne savez pas à qui vous adresser ?</h2><p>Présentez brièvement votre demande, le pôle concerné si vous le connaissez et vos coordonnées.</p><a className="contact-directory-email" href={`mailto:${contactEmail}`}>{contactEmail}</a><CopyEmail /></div><div><h3>Pour faciliter l’échange</h3><p>Indiquez un objet précis et partagez les liens utiles à la compréhension de votre projet. Les liens « Contact par e-mail » ouvrent votre application de messagerie.</p></div></aside></section></main>;
+  return <ContactContent />;
 }
