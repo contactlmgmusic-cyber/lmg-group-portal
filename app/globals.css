@@ -1136,3 +1136,40 @@
     white-space:normal;
   }
 }
+
+/* Footer cookie preferences trigger */
+
+.footer-cookie-trigger{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:50%;
+  background:#1457ff;
+  color:#fff;
+  cursor:pointer;
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.footer-cookie-trigger svg{
+  width:29px;
+  height:29px;
+}
+
+.footer-cookie-trigger:hover{
+  background:#fff;
+  color:#08142e;
+  border-color:#fff;
+  transform:scale(1.04);
+}
+
+.footer-cookie-trigger:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:3px;
+}

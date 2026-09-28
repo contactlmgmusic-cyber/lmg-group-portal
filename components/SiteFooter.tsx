@@ -219,6 +219,38 @@ export default function SiteFooter() {
       </div>
 
       <div className="footer-legal">
+        <button
+  type="button"
+  className="footer-cookie-trigger"
+  onClick={openCookieSettings}
+  aria-label={
+    locale === "fr"
+      ? "Gérer mes préférences de cookies"
+      : "Customize cookie preferences"
+  }
+  title={
+    locale === "fr"
+      ? "Gérer mes cookies"
+      : "Customize Cookies"
+  }
+>
+  <svg
+    viewBox="0 0 32 32"
+    aria-hidden="true"
+  >
+    <path
+      d="M26.5 16.8A7 7 0 0 1 18.2 7a8.8 8.8 0 1 0 8.3 9.8Z"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle cx="11.2" cy="13" r="1.3" fill="currentColor" />
+    <circle cx="13.8" cy="20.2" r="1.3" fill="currentColor" />
+    <circle cx="19.2" cy="17.2" r="1.3" fill="currentColor" />
+  </svg>
+</button>
         <nav
           className="footer-legal-links"
           aria-label={
