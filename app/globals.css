@@ -1065,3 +1065,74 @@
     gap:45px;
   }
 }
+
+/* =========================================================
+   FIX — Footer legal desktop
+   ========================================================= */
+
+.footer-legal{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  padding:26px var(--gutter);
+  background:#050d1c;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.footer-legal-links{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:28px;
+}
+
+.footer-legal-links a,
+.footer-legal-links button{
+  margin:0;
+  padding:0;
+  background:none;
+  border:0;
+  color:#9eabc2;
+  font:inherit;
+  font-size:10px;
+  line-height:1;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:color .2s;
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links button:hover{
+  color:#fff;
+}
+
+.footer-copyright{
+  margin:0;
+  padding:0;
+  color:#78869e;
+  font-size:10px;
+  line-height:1;
+  white-space:nowrap;
+}
+
+@media(max-width:900px){
+  .footer-legal{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:22px;
+  }
+}
+
+@media(max-width:560px){
+  .footer-legal-links{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .footer-copyright{
+    white-space:normal;
+  }
+}
