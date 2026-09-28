@@ -1173,3 +1173,45 @@
   outline:2px solid #fff;
   outline-offset:3px;
 }
+
+/* Final legal footer alignment */
+
+.footer-legal{
+  display:grid;
+  grid-template-columns:48px 1fr auto;
+  align-items:center;
+  gap:36px;
+}
+
+.footer-legal-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:28px;
+}
+
+.footer-copyright{
+  margin:0;
+  padding:0;
+  white-space:nowrap;
+  text-align:right;
+}
+
+@media(max-width:900px){
+  .footer-legal{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:22px;
+  }
+
+  .footer-legal-links{
+    justify-content:flex-start;
+  }
+
+  .footer-copyright{
+    text-align:left;
+  }
+}

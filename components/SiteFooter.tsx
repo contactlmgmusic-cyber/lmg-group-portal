@@ -208,16 +208,6 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="footer-contact-row">
-        <a href={`mailto:${contactEmail}`}>
-          {contactEmail}
-        </a>
-
-        <a href="#contenu">
-          {content.backToTop}
-        </a>
-      </div>
-
       <div className="footer-legal">
         <button
   type="button"
