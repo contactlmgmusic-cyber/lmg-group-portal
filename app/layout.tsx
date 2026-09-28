@@ -6,6 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import { siteUrl } from "@/lib/metadata";
 
 import "./globals.css";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -19,21 +20,10 @@ export const metadata: Metadata = {
     "Discover Legacy Music Group, its Music and Agency businesses, and the projects connecting music, live entertainment, strategy and creative experiences.",
 
   icons: {
-    icon: {
-      url: "/favicon-lmg-blue.png?v=blue-20260927-2",
-      type: "image/png",
-      sizes: "64x64",
-    },
-
-    shortcut:
-      "/favicon-lmg-blue.png?v=blue-20260927-2",
-
-    apple: {
-      url: "/apple-icon.png?v=blue-20260927-2",
-      sizes: "180x180",
-      type: "image/png",
-    },
-  },
+  icon: "/icon.png",
+  shortcut: "/icon.png",
+  apple: "/apple-icon.png",
+},
 };
 
 export default function RootLayout({
@@ -54,6 +44,7 @@ export default function RootLayout({
           {children}
 
           <SiteFooter />
+          <CookieConsent />
         </LanguageProvider>
       </body>
     </html>

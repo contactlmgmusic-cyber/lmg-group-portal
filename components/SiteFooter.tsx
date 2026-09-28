@@ -45,6 +45,13 @@ export default function SiteFooter() {
           instagramNewTab:
             " on Instagram (opens in a new tab)",
 
+          legalNotice: "Legal Notice",
+          privacy: "Privacy Policy",
+          cookies: "Cookie Policy",
+          manageCookies: "Customize Cookies",
+          accessibility: "Accessibility",
+          sitemap: "Site Map",
+
           backToTop: "Back to top ↑",
         }
       : {
@@ -81,6 +88,13 @@ export default function SiteFooter() {
           instagramNewTab:
             " sur Instagram (nouvel onglet)",
 
+          legalNotice: "Mentions légales",
+          privacy: "Politique de confidentialité",
+          cookies: "Politique de cookies",
+          manageCookies: "Gérer mes cookies",
+          accessibility: "Accessibilité",
+          sitemap: "Plan du site",
+
           backToTop: "Haut de page ↑",
         };
 
@@ -98,6 +112,12 @@ export default function SiteFooter() {
       label: content.agencyInstagram,
     },
   ];
+
+  function openCookieSettings() {
+    window.dispatchEvent(
+      new Event("lmg:open-cookie-settings")
+    );
+  }
 
   return (
     <footer className="site-footer">
@@ -188,11 +208,7 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <span>
-          © {new Date().getFullYear()} Legacy Music Group
-        </span>
-
+      <div className="footer-contact-row">
         <a href={`mailto:${contactEmail}`}>
           {contactEmail}
         </a>
@@ -200,6 +216,48 @@ export default function SiteFooter() {
         <a href="#contenu">
           {content.backToTop}
         </a>
+      </div>
+
+      <div className="footer-legal">
+        <nav
+          className="footer-legal-links"
+          aria-label={
+            locale === "fr"
+              ? "Informations légales"
+              : "Legal information"
+          }
+        >
+          <Link href="/mentions-legales">
+            {content.legalNotice}
+          </Link>
+
+          <Link href="/confidentialite">
+            {content.privacy}
+          </Link>
+
+          <Link href="/cookies">
+            {content.cookies}
+          </Link>
+
+          <button
+            type="button"
+            onClick={openCookieSettings}
+          >
+            {content.manageCookies}
+          </button>
+
+          <Link href="/accessibilite">
+            {content.accessibility}
+          </Link>
+
+          <Link href="/plan-du-site">
+            {content.sitemap}
+          </Link>
+        </nav>
+
+        <span className="footer-copyright">
+          © {new Date().getFullYear()} Legacy Music Group
+        </span>
       </div>
     </footer>
   );
