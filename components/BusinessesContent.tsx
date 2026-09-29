@@ -14,9 +14,9 @@ export default function BusinessesContent() {
       ? {
           intro: {
             label: "Businesses & Products",
-            title: "Two businesses.\nOne group.",
+            title: "Our businesses.\nOne ecosystem.",
             description:
-              "Each LMG business has its own expertise and identity. Together, they connect music, live entertainment, strategy and creative expression.",
+              "LMG Group currently develops its activities through two core businesses: LMG Music and LMG Agency. Each has its own identity, expertise and field of action within the wider Group ecosystem.",
           },
 
           businesses: [
@@ -58,18 +58,18 @@ export default function BusinessesContent() {
           ],
 
           nextStep: {
-            title: "Find the right expertise.",
+            title: "Explore our businesses.",
             description:
-              "Music, live entertainment, strategy or creative: explore the LMG business that best fits your project.",
+              "Discover LMG Music and LMG Agency, the two businesses currently shaping the Group’s activities and development.",
             label: "Get in touch",
           },
         }
       : {
           intro: {
             label: "Nos activités",
-            title: "Deux expertises.\nUn groupe.",
+            title: "Nos activités.\nUn même écosystème.",
             description:
-              "Chaque pôle LMG possède son métier et son univers. Ensemble, ils relient la musique, le live, la stratégie et la création.",
+              "LMG Group développe aujourd’hui ses activités à travers deux pôles principaux : LMG Music et LMG Agency. Chacun possède sa propre identité, ses expertises et son champ d’action au sein de l’écosystème du groupe.",
           },
 
           businesses: [
@@ -111,9 +111,9 @@ export default function BusinessesContent() {
           ],
 
           nextStep: {
-            title: "Trouvez la bonne expertise.",
+            title: "Explorer nos activités.",
             description:
-              "Musique, live, stratégie ou création : découvrez le pôle LMG qui correspond à votre projet.",
+              "Découvrez LMG Music et LMG Agency, les deux activités qui structurent aujourd’hui le développement du groupe.",
             label: "Entrer en contact",
           },
         };
