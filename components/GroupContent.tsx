@@ -15,16 +15,16 @@ export default function GroupContent() {
       ? {
           intro: {
             label: "About LMG Group",
-            title: "Independent in spirit.\nUnited in action.",
+            title: "Independent in spirit.\nBuilt to evolve.",
             description:
-              "Legacy Music Group brings together music, live entertainment and creative expertise. Two complementary businesses supporting artists, brands and projects from vision to audience.",
+              "Legacy Music Group is an independent group that develops brands, projects and solutions across culture, creativity and innovation. Its ecosystem is built to grow, evolve and open new fields of activity over time.",
           },
 
           chaptersLabel: "EXPLORE THE GROUP",
 
           chapters: [
             ["vision", "Our Vision"],
-            ["ecosysteme", "Our Businesses"],
+            ["ecosysteme", "Our Ecosystem"],
             ["approche", "Our Approach"],
             ["direction", "Leadership"],
           ] as const,
@@ -41,10 +41,10 @@ export default function GroupContent() {
               </>
             ),
             paragraphs: [
-              "Music, a live experience, a brand identity: every project begins with an intention. Our ambition is to give it the means to express itself without losing what makes it distinctive.",
-              "LMG connects artist development, live entertainment and communication. The Group creates bridges between these areas of expertise while preserving the identity of each business and the personality of every project.",
+              "LMG was built around a simple idea: create strong activities, give them the means to develop and allow new ideas to become real projects.",
+              "The Group currently develops its activities primarily through LMG Music and LMG Agency. This foundation is designed to evolve over time as new projects, solutions and areas of expertise emerge.",
             ],
-            signature: "Music. Live. Creative.",
+            signature: "Create. Develop. Build.",
           },
 
           ecosystem: {
@@ -57,7 +57,7 @@ export default function GroupContent() {
               </>
             ),
             intro:
-              "Supporting creation, giving it form and connecting it with its audience. Each LMG business brings its own expertise, teams and perspective.",
+              "Today, the LMG ecosystem is structured around two core businesses. Each develops its own expertise and identity while contributing to the wider development of the Group.",
 
             businesses: [
               {
@@ -83,7 +83,7 @@ export default function GroupContent() {
 
             connectionEyebrow: "WHAT CONNECTS US",
             connection:
-              "A shared focus on project identity, the quality of its expression and its relationship with audiences. Collaboration between our businesses is built around these needs.",
+              "A shared entrepreneurial vision connects the Group’s activities: develop strong identities, build useful projects and create the conditions for each activity to grow independently while benefiting from the wider LMG ecosystem.",
           },
 
           approach: {
@@ -107,13 +107,13 @@ export default function GroupContent() {
                 title: "Connect",
                 subtitle: "The right expertise, at the right time.",
                 description:
-                  "Music, live, image and digital work together. Our businesses can collaborate whenever it serves the project, with a clear role for each team.",
+                  "The Group connects expertise, resources and ideas when they can strengthen a project. Each activity keeps its own identity while benefiting from the wider LMG ecosystem.",
               },
               {
                 title: "Build",
                 subtitle: "A journey, step by step.",
                 description:
-                  "A release, an event or a website is one moment in a wider journey. Our approach connects these moments and prepares what comes next with consistency.",
+                  "LMG is built with a long-term perspective. We develop what exists today while creating the foundations that allow new projects, solutions and activities to emerge tomorrow.",
               },
             ],
 
@@ -145,7 +145,7 @@ export default function GroupContent() {
           nextStep: {
             title: "What comes next, we build together.",
             description:
-              "An artistic project, a live experience or a brand ready to grow? Discover LMG's expertise and the team that can support it.",
+              "Discover the businesses, projects and initiatives shaping LMG today — and those preparing what comes next.",
             label: "Explore our businesses",
           },
 
@@ -154,16 +154,16 @@ export default function GroupContent() {
       : {
           intro: {
             label: "À propos de LMG Group",
-            title: "Indépendants d’esprit.\nEnsemble dans l’action.",
+            title: "Indépendants d’esprit.\nPensés pour évoluer.",
             description:
-              "Legacy Music Group réunit musique, live et création. Deux pôles complémentaires pour accompagner les talents, les marques et leurs projets jusqu’à la rencontre avec le public.",
+              "Legacy Music Group est un groupe indépendant qui développe des marques, des projets et des solutions à la croisée de la culture, de la création et de l’innovation. Son écosystème est pensé pour grandir, évoluer et s’ouvrir progressivement à de nouveaux champs d’activité.",
           },
 
           chaptersLabel: "EXPLORER LE GROUPE",
 
           chapters: [
             ["vision", "Notre vision"],
-            ["ecosysteme", "Nos pôles"],
+            ["ecosysteme", "Notre écosystème"],
             ["approche", "Notre approche"],
             ["direction", "La direction"],
           ] as const,
@@ -180,10 +180,10 @@ export default function GroupContent() {
               </>
             ),
             paragraphs: [
-              "Une musique, une expérience live, une identité de marque : chaque projet porte une intention. Notre ambition est de lui donner les moyens de s’exprimer, sans perdre ce qui le rend singulier.",
-              "LMG fait dialoguer le développement artistique, le live et la communication. Le groupe crée des passerelles entre ces métiers, tout en laissant à chaque pôle son expertise et à chaque projet sa personnalité.",
+              "LMG s’est construit autour d’une idée simple : créer des activités fortes, leur donner les moyens de se développer et permettre à de nouvelles idées de devenir des projets concrets.",
+              "Le groupe développe aujourd’hui principalement ses activités à travers LMG Music et LMG Agency. Cette première base est pensée pour évoluer au fil du développement de nouveaux projets, solutions et expertises.",
             ],
-            signature: "Musique. Live. Création.",
+            signature: "Créer. Développer. Construire.",
           },
 
           ecosystem: {
@@ -196,7 +196,7 @@ export default function GroupContent() {
               </>
             ),
             intro:
-              "Accompagner la création, lui donner une forme et la faire rencontrer son public. Chaque pôle intervient avec ses métiers, ses équipes et son univers.",
+              "Aujourd’hui, l’écosystème LMG s’articule autour de deux activités principales. Chacune développe ses propres expertises et son identité tout en participant au développement global du groupe.",
 
             businesses: [
               {
@@ -222,7 +222,7 @@ export default function GroupContent() {
 
             connectionEyebrow: "CE QUI NOUS RELIE",
             connection:
-              "Une même attention à l’identité du projet, à la qualité de son expression et à sa relation avec le public. Les collaborations entre pôles se construisent autour de ces besoins.",
+              "Une même vision entrepreneuriale relie les activités du groupe : développer des identités fortes, construire des projets utiles et permettre à chaque activité de grandir de manière autonome tout en bénéficiant de l’écosystème LMG.",
           },
 
           approach: {
@@ -246,13 +246,13 @@ export default function GroupContent() {
                 title: "Relier",
                 subtitle: "Les bons métiers, au bon moment.",
                 description:
-                  "Musique, live, image et digital se répondent. Les pôles peuvent travailler ensemble quand cela sert le projet, avec un rôle clair pour chacun.",
+                  "Le groupe relie les expertises, les ressources et les idées lorsqu’elles peuvent renforcer un projet. Chaque activité conserve son identité tout en bénéficiant de l’écosystème LMG.",
               },
               {
                 title: "Construire",
                 subtitle: "Une trajectoire, étape par étape.",
                 description:
-                  "Une sortie, un événement ou un site est une étape dans un parcours. Notre approche consiste à articuler ces moments et à préparer la suite avec cohérence.",
+                  "LMG se construit dans une logique de long terme. Nous développons les activités présentes tout en créant les fondations qui permettront à de nouveaux projets, solutions et activités d’émerger demain.",
               },
             ],
 
@@ -284,7 +284,7 @@ export default function GroupContent() {
           nextStep: {
             title: "La suite se construit ensemble.",
             description:
-              "Un projet artistique, une expérience live ou une marque à développer : découvrez les métiers de LMG et le pôle qui peut vous accompagner.",
+              "Découvrez les activités, les projets et les initiatives qui construisent LMG aujourd’hui — et préparent ce qui vient ensuite.",
             label: "Explorer nos activités",
           },
 
