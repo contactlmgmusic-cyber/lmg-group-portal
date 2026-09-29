@@ -20,12 +20,6 @@ export const metadata: Metadata = {
     "Legacy Music Group brings together music, live entertainment, strategy and creative expertise through LMG Music and LMG Agency.",
 
   applicationName: "LMG GROUP",
-
-  icons: {
-    icon: "/lmg-group-icon.png?v=1",
-    shortcut: "/lmg-group-icon.png?v=1",
-    apple: "/apple-icon.png?v=1",
-  },
 };
 
 export default function RootLayout({
