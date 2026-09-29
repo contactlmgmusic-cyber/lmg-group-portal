@@ -33,7 +33,7 @@ export const divisions = [
     contact: "Present a music or live project",
     subject: "LMG Music — Music & Live Inquiry",
 
-    website: "https://legacymusicgroup.fr",
+    website: "https://lmgmusic.fr",
 
     project: "fly",
   },
@@ -71,7 +71,7 @@ export const divisions = [
     subject: "LMG Agency — Brand & Digital Inquiry",
 
     website:
-      "https://agency.legacymusicgroup.fr",
+      "https://lmgagency.fr",
 
     project: "deepa",
   },

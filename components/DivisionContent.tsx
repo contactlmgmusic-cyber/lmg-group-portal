@@ -51,7 +51,7 @@ export default function DivisionContent({
         description:
           "LMG Music develops artists and music projects across recorded music and live entertainment, connecting artistic vision, strategy and audience.",
 
-        website: "#",
+        website: "https://lmgmusic.fr",
 
         skills: [
           [
@@ -103,7 +103,7 @@ export default function DivisionContent({
         description:
           "LMG Agency supports brands, projects and talents through strategy, creative direction, communication and digital experiences.",
 
-        website: "https://agency.legacymusicgroup.fr",
+        website: "https://lmgagency.fr",
 
         skills: [
           [
@@ -177,7 +177,7 @@ export default function DivisionContent({
         description:
           "LMG Music développe les artistes et les projets musicaux autour de la musique enregistrée et du live, en reliant vision artistique, stratégie et rencontre avec le public.",
 
-        website: "#",
+        website: "https://lmgmusic.fr",
 
         skills: [
           [
@@ -229,7 +229,7 @@ export default function DivisionContent({
         description:
           "LMG Agency accompagne les marques, les projets et les talents à travers la stratégie, la direction créative, la communication et les expériences digitales.",
 
-        website: "https://agency.legacymusicgroup.fr",
+        website: "https://lmgagency.fr",
 
         skills: [
           [

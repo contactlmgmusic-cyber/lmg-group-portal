@@ -35,7 +35,7 @@ export default function ContactContent() {
               title: "Strategy, creative & digital",
               description:
                 "LMG Agency — Strategy, brand identity, communication, content and digital experiences.",
-              href: "https://agency.legacymusicgroup.fr",
+              href: "https://lmgagency.fr",
               label: "LMG Agency Website",
               subject: "",
               external: true,
@@ -93,7 +93,7 @@ export default function ContactContent() {
               title: "Stratégie, création & digital",
               description:
                 "LMG Agency — Stratégie, identité de marque, communication, contenus et expériences digitales.",
-              href: "https://agency.legacymusicgroup.fr",
+              href: "https://lmgagency.fr",
               label: "Site LMG Agency",
               subject: "",
               external: true,
