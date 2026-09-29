@@ -180,13 +180,21 @@ export default function SiteFooter() {
         <div className="footer-links">
           <strong>{content.divisions}</strong>
 
-          <Link href="/poles/music">
-            {content.music}
-          </Link>
+          <a
+  href="https://lmgmusic.fr"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {content.music} ↗
+</a>
 
-          <Link href="/poles/agency">
-            {content.agency}
-          </Link>
+<a
+  href="https://lmgagency.fr"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {content.agency} ↗
+</a>
         </div>
 
         <div className="footer-links">
