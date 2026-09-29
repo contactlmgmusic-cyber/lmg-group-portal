@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Legacy Music Group brings together music, live entertainment, strategy and creative expertise through LMG Music and LMG Agency.",
+    "Legacy Music Group develops brands, projects and solutions across culture, creativity and innovation. Its current activities include LMG Music and LMG Agency.",
 
   applicationName: "LMG GROUP",
 };

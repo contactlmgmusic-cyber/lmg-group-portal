@@ -13,7 +13,7 @@ export function pageMetadata(
   const isHome = path === "/";
 
   const shareTitle = isHome
-    ? "LMG Group — Music, live entertainment and creation"
+    ? "LMG Group — Culture, Creativity & Innovation"
     : `${title} — LMG Group`;
 
   return {
@@ -35,7 +35,7 @@ export function pageMetadata(
         {
           url: image,
           alt: isHome
-            ? "Legacy Music Group — Music, live entertainment and creation"
+            ? "Legacy Music Group — Culture, Creativity & Innovation"
             : title,
         },
       ],

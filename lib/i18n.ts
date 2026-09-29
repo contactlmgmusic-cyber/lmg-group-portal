@@ -71,7 +71,7 @@ export const translations = {
       allDescription: "Latest from Legacy Music Group",
     },
 
-    tagline: "Music. Live. Creative.",
+    tagline: "Create. Develop. Build.",
   },
 
   fr: {
@@ -144,7 +144,7 @@ export const translations = {
       allDescription: "Les dernières nouvelles de LMG",
     },
 
-    tagline: "Musique. Live. Création.",
+    tagline: "Créer. Développer. Construire.",
   },
 } as const;
 

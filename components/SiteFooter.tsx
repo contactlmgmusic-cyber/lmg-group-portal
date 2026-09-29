@@ -16,11 +16,11 @@ export default function SiteFooter() {
 
           tagline: (
             <>
-              Music, live entertainment and creative.
+              Create. Develop. Build.
               <br />
-              Distinct expertise.
+              Different ventures.
               <br />
-              One shared ambition.
+              One shared vision.
             </>
           ),
 
@@ -59,11 +59,11 @@ export default function SiteFooter() {
 
           tagline: (
             <>
-              Musique, live et création.
+              Créer. Développer. Construire.
               <br />
-              Des métiers singuliers.
+              Des activités singulières.
               <br />
-              Une ambition commune.
+              Une vision commune.
             </>
           ),
 

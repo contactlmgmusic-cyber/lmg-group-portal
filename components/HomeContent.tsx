@@ -25,36 +25,36 @@ export default function HomeContent({
       ? {
           heroTitle: (
             <>
-              Culture.
+              Create.
               <br />
-              Talent.
+              Develop.
               <br />
-              <span>What comes next.</span>
+              <span>Build what comes next.</span>
             </>
           ),
           heroDescription:
-            "Music, live entertainment and creative expertise. An independent group connecting disciplines to help projects grow.",
+            "LMG Group develops brands, projects and solutions across culture, creativity and innovation.",
           discoverGroup: "Discover the Group",
           featured: "FEATURED",
-          ecosystem: "ONE GROUP. TWO CORE BUSINESSES.",
+          ecosystem: "ONE GROUP. AN EVOLVING ECOSYSTEM.",
           explore: "Explore",
 
           discover: "DISCOVER",
           group: "Group",
           groupNews: "LMG News",
-          creation: "Creative",
+          creation: "Projects",
           groupProjects: "Group Projects",
 
           groupEyebrow: "01 / THE GROUP",
           visionTitle: (
             <>
-              Distinct expertise.
+              Different ventures.
               <br />
-              <span className="blue">One shared ambition.</span>
+              <span className="blue">One shared vision.</span>
             </>
           ),
           visionDescription:
-            "An artist builds a world. A live experience connects with its audience. A brand finds its voice. LMG brings together the expertise that helps each of these journeys move forward.",
+            "LMG builds and develops activities designed to grow independently while sharing the same vision. Today, the Group operates primarily through LMG Music and LMG Agency, with an ecosystem built to evolve.",
           ourVision: "Our Vision",
 
           projectsEyebrow: "02 / PROJECTS",
@@ -74,36 +74,36 @@ export default function HomeContent({
       : {
           heroTitle: (
             <>
-              La culture.
+              Créer.
               <br />
-              Les talents.
+              Développer.
               <br />
-              <span>Et la suite.</span>
+              <span>Construire la suite.</span>
             </>
           ),
           heroDescription:
-            "Musique, live et création. Un groupe indépendant qui relie les expertises pour faire grandir les projets.",
+            "LMG Group développe des marques, des projets et des solutions à la croisée de la culture, de la création et de l’innovation.",
           discoverGroup: "Découvrir le groupe",
           featured: "À DÉCOUVRIR",
-          ecosystem: "UN GROUPE. DEUX PÔLES.",
+          ecosystem: "UN GROUPE. UN ÉCOSYSTÈME EN ÉVOLUTION.",
           explore: "Explorer",
 
           discover: "À DÉCOUVRIR",
           group: "Groupe",
           groupNews: "Les actualités LMG",
-          creation: "Création",
+          creation: "Projets",
           groupProjects: "Les projets du groupe",
 
           groupEyebrow: "01 / LE GROUPE",
           visionTitle: (
             <>
-              Des métiers singuliers.
+              Des activités singulières.
               <br />
-              <span className="blue">Une ambition commune.</span>
+              <span className="blue">Une vision commune.</span>
             </>
           ),
           visionDescription:
-            "Un artiste développe son univers. Une expérience live rencontre son public. Une marque trouve sa voix. LMG réunit les expertises qui accompagnent ces trajectoires.",
+            "LMG construit et développe des activités pensées pour grandir de manière autonome tout en partageant une même vision. Aujourd’hui, le groupe s’articule principalement autour de LMG Music et LMG Agency, au sein d’un écosystème appelé à évoluer.",
           ourVision: "Notre vision",
 
           projectsEyebrow: "02 / LES PROJETS",

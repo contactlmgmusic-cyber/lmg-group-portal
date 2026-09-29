@@ -17,6 +17,6 @@ export default async function HomePage() {
 
 export const metadata = pageMetadata(
   "Home - LMG Group Portal",
-  "Discover Legacy Music Group, an independent group connecting music, live entertainment, strategy and creative expertise.",
+  "Discover Legacy Music Group, an independent group developing brands, projects and solutions across culture, creativity and innovation.",
   "/"
 );
