@@ -1496,3 +1496,115 @@
     padding-top: 32px;
   }
 }
+/* LMG OS — upcoming product teaser */
+.lmg-os-teaser{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  padding:clamp(45px,6vw,90px);
+  background:var(--navy);
+  color:#fff;
+}
+
+.lmg-os-teaser::after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:-210px;
+  top:-250px;
+  border:1px solid #4164c04d;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.lmg-os-teaser::before{
+  content:"";
+  position:absolute;
+  width:340px;
+  height:340px;
+  right:-120px;
+  top:-160px;
+  border:1px solid #4164c04d;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.lmg-os-teaser-heading,
+.lmg-os-teaser-content{
+  position:relative;
+  z-index:1;
+}
+
+.lmg-os-teaser .eyebrow{
+  color:#adc2ff;
+}
+
+.lmg-os-teaser h2{
+  margin:35px 0 0;
+  font-size:clamp(58px,7vw,108px);
+  line-height:.95;
+  letter-spacing:-.065em;
+  font-weight:500;
+}
+
+.lmg-os-teaser-content{
+  align-self:end;
+  max-width:620px;
+}
+
+.lmg-os-teaser-tagline{
+  margin:0 0 25px;
+  font-size:clamp(25px,2.6vw,40px);
+  line-height:1.15;
+  letter-spacing:-.04em;
+  font-weight:500;
+}
+
+.lmg-os-teaser .body-copy{
+  color:#c7d3e9;
+  font-size:16px;
+  max-width:590px;
+}
+
+.lmg-os-status{
+  display:inline-flex;
+  align-items:center;
+  margin-top:30px;
+  padding:11px 15px;
+  border:1px solid #667594;
+  color:#adc2ff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+
+@media(max-width:760px){
+  .lmg-os-teaser{
+    grid-template-columns:1fr;
+    gap:45px;
+    padding:45px 28px;
+  }
+
+  .lmg-os-teaser h2{
+    margin-top:22px;
+    font-size:clamp(58px,18vw,82px);
+  }
+
+  .lmg-os-teaser-content{
+    align-self:auto;
+  }
+
+  .lmg-os-teaser::after{
+    width:380px;
+    height:380px;
+    right:-220px;
+    top:-180px;
+  }
+
+  .lmg-os-teaser::before{
+    display:none;
+  }
+}

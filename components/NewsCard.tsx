@@ -11,6 +11,21 @@ export default function NewsCard({
   article: NewsArticle;
 }) {
   const { locale } = useLanguage();
+const localizedArticle = {
+  title:
+    locale === "en" && article.titleEn
+      ? article.titleEn
+      : article.title,
+  category:
+    locale === "en" && article.categoryEn
+      ? article.categoryEn
+      : article.category,
+  intro:
+    locale === "en" && article.introEn
+      ? article.introEn
+      : article.intro,
+};
+
   const formattedDate = new Intl.DateTimeFormat(
   locale === "en" ? "en-GB" : "fr-FR",
   {
@@ -74,7 +89,7 @@ export default function NewsCard({
 
       <div className="news-card-content">
         <p className="eyebrow">
-          {article.category}
+          {localizedArticle.category}
         </p>
 
         <time dateTime={article.publishedAt}>
@@ -82,11 +97,11 @@ export default function NewsCard({
 </time>
 
         <h3>
-          {article.title}
+          {localizedArticle.title}
         </h3>
 
         <p>
-          {article.intro}
+          {localizedArticle.intro}
         </p>
 
         <span className="text-link">

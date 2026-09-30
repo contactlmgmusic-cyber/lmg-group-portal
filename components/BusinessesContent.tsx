@@ -16,7 +16,7 @@ export default function BusinessesContent() {
             label: "Businesses & Products",
             title: "Our businesses.\nOne ecosystem.",
             description:
-              "LMG Group currently develops its activities through two core businesses: LMG Music and LMG Agency. Each has its own identity, expertise and field of action within the wider Group ecosystem.",
+              "LMG Group currently develops its activities through two core businesses, LMG Music and LMG Agency, while also building new projects and products designed to extend the Group’s ecosystem.",
           },
 
           businesses: [
@@ -57,19 +57,28 @@ export default function BusinessesContent() {
             },
           ],
 
-          nextStep: {
-            title: "Explore our businesses.",
+          product: {
+            label: "COMING NEXT / PRODUCT",
+            name: "LMG OS",
+            tagline: "Built inside LMG. Designed to go beyond it.",
             description:
-              "Discover LMG Music and LMG Agency, the two businesses currently shaping the Group’s activities and development.",
+              "LMG OS is a business management platform initially developed to support and centralize the operations of LMG Group. The platform is now evolving toward a broader version designed for businesses and teams beyond the LMG ecosystem.",
+            status: "COMING SOON",
+          },
+
+          nextStep: {
+            title: "An ecosystem built to evolve.",
+            description:
+              "From its current businesses to new products and initiatives, LMG Group continues to develop an ecosystem designed to grow, evolve and explore new opportunities.",
             label: "Get in touch",
           },
         }
       : {
           intro: {
-            label: "Nos activités",
+            label: "Activités & Produits",
             title: "Nos activités.\nUn même écosystème.",
             description:
-              "LMG Group développe aujourd’hui ses activités à travers deux pôles principaux : LMG Music et LMG Agency. Chacun possède sa propre identité, ses expertises et son champ d’action au sein de l’écosystème du groupe.",
+              "LMG Group développe aujourd’hui ses activités à travers deux pôles principaux, LMG Music et LMG Agency, tout en construisant de nouveaux projets et produits destinés à faire évoluer l’écosystème du groupe.",
           },
 
           businesses: [
@@ -110,10 +119,19 @@ export default function BusinessesContent() {
             },
           ],
 
-          nextStep: {
-            title: "Explorer nos activités.",
+          product: {
+            label: "PROCHAINEMENT / PRODUIT",
+            name: "LMG OS",
+            tagline: "Né au sein de LMG. Pensé pour aller plus loin.",
             description:
-              "Découvrez LMG Music et LMG Agency, les deux activités qui structurent aujourd’hui le développement du groupe.",
+              "LMG OS est une plateforme de gestion d’entreprise initialement développée pour accompagner et centraliser les opérations de LMG Group. La plateforme évolue aujourd’hui vers une version plus large, pensée pour des entreprises et des équipes au-delà de l’écosystème LMG.",
+            status: "BIENTÔT DISPONIBLE",
+          },
+
+          nextStep: {
+            title: "Un écosystème conçu pour évoluer.",
+            description:
+              "De ses activités actuelles à ses nouveaux produits et initiatives, LMG Group continue de développer un écosystème pensé pour grandir, évoluer et explorer de nouvelles opportunités.",
             label: "Entrer en contact",
           },
         };
@@ -170,6 +188,29 @@ export default function BusinessesContent() {
             </div>
           </article>
         ))}
+      </section>
+
+      <section className="section">
+        <article className="lmg-os-teaser">
+          <div className="lmg-os-teaser-heading">
+            <p className="eyebrow">{content.product.label}</p>
+            <h2>{content.product.name}</h2>
+          </div>
+
+          <div className="lmg-os-teaser-content">
+            <p className="lmg-os-teaser-tagline">
+              {content.product.tagline}
+            </p>
+
+            <p className="body-copy">
+              {content.product.description}
+            </p>
+
+            <span className="lmg-os-status">
+              {content.product.status}
+            </span>
+          </div>
+        </article>
       </section>
 
       <NextStep

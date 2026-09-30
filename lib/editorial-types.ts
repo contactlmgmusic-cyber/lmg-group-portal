@@ -31,14 +31,19 @@ export type Project = {
 export type NewsSection = {
   title: string;
   text: string;
+  titleEn?: string;
+  textEn?: string;
 };
 
 export type NewsArticle = {
   slug: string;
   title: string;
+  titleEn?: string;
   category: string;
+  categoryEn?: string;
   publishedAt: string;
   dateLabel?: string;
   intro: string;
+  introEn?: string;
   sections: readonly NewsSection[];
 };

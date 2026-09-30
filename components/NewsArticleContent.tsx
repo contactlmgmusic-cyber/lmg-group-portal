@@ -14,17 +14,43 @@ export default function NewsArticleContent({
   article: NewsArticle;
 }) {
   const { locale } = useLanguage();
+
   const formattedDate = new Intl.DateTimeFormat(
-  locale === "en" ? "en-GB" : "fr-FR",
-  {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }
-).format(
-  new Date(`${article.publishedAt}T00:00:00Z`)
-);
+    locale === "en" ? "en-GB" : "fr-FR",
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }
+  ).format(
+    new Date(`${article.publishedAt}T00:00:00Z`)
+  );
+
+  const localizedArticle = {
+    title:
+      locale === "en" && article.titleEn
+        ? article.titleEn
+        : article.title,
+    category:
+      locale === "en" && article.categoryEn
+        ? article.categoryEn
+        : article.category,
+    intro:
+      locale === "en" && article.introEn
+        ? article.introEn
+        : article.intro,
+    sections: article.sections.map((section) => ({
+      title:
+        locale === "en" && section.titleEn
+          ? section.titleEn
+          : section.title,
+      text:
+        locale === "en" && section.textEn
+          ? section.textEn
+          : section.text,
+    })),
+  };
 
   const content =
     locale === "en"
@@ -77,25 +103,25 @@ export default function NewsArticleContent({
     <main id="contenu">
       <article>
         <PageIntro
-          label={article.category}
+          label={localizedArticle.category}
           parent={{
             href: "/actualites",
             label: content.news,
           }}
-          title={article.title}
-          description={article.intro}
+          title={localizedArticle.title}
+          description={localizedArticle.intro}
         />
 
         <div className="article-meta">
           <span>
-            {article.category}
+            {localizedArticle.category}
           </span>
 
           <span>
             {content.published}{" "}
             <time dateTime={article.publishedAt}>
-  {formattedDate}
-</time>
+              {formattedDate}
+            </time>
           </span>
 
           <span>
@@ -110,10 +136,10 @@ export default function NewsArticleContent({
             </p>
 
             <nav aria-label={content.contentsAria}>
-              {article.sections.map(
+              {localizedArticle.sections.map(
                 (section, index) => (
                   <a
-                    key={section.title}
+                    key={`${section.title}-${index}`}
                     href={`#chapitre-${index + 1}`}
                   >
                     {section.title}
@@ -124,10 +150,10 @@ export default function NewsArticleContent({
           </aside>
 
           <div className="article-body">
-            {article.sections.map(
+            {localizedArticle.sections.map(
               (section, index) => (
                 <section
-                  key={section.title}
+                  key={`${section.title}-${index}`}
                   id={`chapitre-${index + 1}`}
                 >
                   <h2>
