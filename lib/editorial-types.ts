@@ -8,11 +8,12 @@ export type Project = {
   title: string;
 
   /**
-   * Public LMG Group architecture:
-   * - Music includes live entertainment
-   * - Agency covers strategy, creative and digital
+   * Public LMG Group project ownership:
+   * - Group: projects, products and initiatives developed directly by LMG Group
+   * - Music: LMG Music, including live entertainment
+   * - Agency: LMG Agency, covering strategy, creative and digital
    */
-  division: "Music" | "Agency";
+  division: "Group" | "Music" | "Agency";
 
   category: string;
   image: string;

@@ -19,30 +19,30 @@ export default function ProjectsContent({
       ? {
           intro: {
             label: "Projects",
-            title: "Creativity,\nin motion.",
+            title: "Ideas,\nbrought to life.",
             description:
-              "A selection of projects at the intersection of our expertise. Distinct worlds spanning music, live entertainment and digital experiences.",
+              "A selection of projects, initiatives and solutions developed across the LMG ecosystem. Different ideas, different fields, brought together by the ambition to build and create.",
           },
 
           nextStep: {
-            title: "Have a project in mind?",
+            title: "Building something new?",
             description:
-              "Music, live entertainment, brand or digital experience: connect with the LMG team that can help bring it to life.",
+              "A project, a brand, an initiative or a new solution: connect with LMG and explore how we can help bring it to life.",
             label: "Get in touch",
           },
         }
       : {
           intro: {
             label: "Projets",
-            title: "La création,\nen mouvement.",
+            title: "Des idées,\nqui prennent vie.",
             description:
-              "Une sélection de projets à la croisée de nos métiers. Des univers singuliers, de la musique au live jusqu’à l’expérience digitale.",
+              "Une sélection de projets, d’initiatives et de solutions développés au sein de l’écosystème LMG. Des idées et des univers différents, réunis par une même ambition : construire et créer.",
           },
 
           nextStep: {
-            title: "Un projet en tête ?",
+            title: "Une nouvelle idée à construire ?",
             description:
-              "Musique, live, marque ou expérience digitale : échangez avec l’équipe LMG qui peut lui donner vie.",
+              "Un projet, une marque, une initiative ou une nouvelle solution : échangez avec LMG pour imaginer comment lui donner vie.",
             label: "Entrer en contact",
           },
         };

@@ -18,14 +18,20 @@ function normalizeProjectDivision(
   ).toLowerCase();
 
   if (
+    value.includes("group")
+  ) {
+    return "Group";
+  }
+
+  if (
     value.includes("agency")
   ) {
     return "Agency";
   }
 
   /*
-   * Legacy Entertainment content now belongs
-   * to the LMG Music business.
+   * Music remains the fallback for legacy content.
+   * Legacy Entertainment content belongs to LMG Music.
    */
   return "Music";
 }
