@@ -11,7 +11,7 @@ export const news: readonly NewsArticle[] = [
     publishedAt: "2026-09-27",
 
     intro:
-      "Legacy Music Group présente son portail : un point d’entrée commun pour découvrir sa vision, ses métiers et ses projets.",
+      "Legacy Music Group présente son portail : un point d’entrée commun pour découvrir sa vision, son écosystème, ses activités et ses projets.",
 
     sections: [
       {
@@ -19,23 +19,23 @@ export const news: readonly NewsArticle[] = [
           "Une porte d’entrée sur le groupe",
 
         text:
-          "Le portail LMG réunit la présentation du groupe, ses deux pôles et une sélection de projets. Il permet de comprendre les liens entre musique, live et création, puis de rejoindre l’univers qui correspond à son besoin.",
+          "Le portail LMG devient le point d’entrée de l’écosystème du groupe. Il présente sa vision, ses activités actuelles et une sélection de projets, tout en offrant un cadre capable d’accueillir les prochaines initiatives développées par LMG.",
       },
 
       {
         title:
-          "Deux expertises complémentaires",
+          "Un écosystème en développement",
 
         text:
-          "LMG Music accompagne les artistes et les projets musicaux, de leur développement aux expériences live, au booking et aux showcases. LMG Agency intervient sur la stratégie, la direction créative, la communication et le digital. Ensemble, ces deux pôles structurent les activités de Legacy Music Group.",
+          "LMG Music et LMG Agency constituent aujourd’hui les deux activités principales du groupe. Music développe les artistes et les projets musicaux, tandis qu’Agency intervient sur la stratégie, la création, la communication et le digital. Cette première structure forme la base d’un écosystème pensé pour évoluer avec le développement de LMG.",
       },
 
       {
         title:
-          "Des projets pour entrer dans nos univers",
+          "Des projets qui racontent l’écosystème",
 
         text:
-          "FLY de LAAM et l’expérience digitale de Deepa Be Yourself font partie de la première sélection présentée sur le portail. Leurs pages ouvrent respectivement la découverte des univers LMG Music et LMG Agency.",
+          "FLY de LAAM et l’expérience digitale de Deepa Be Yourself font partie de la première sélection présentée sur le portail. À travers ses projets, LMG donne à voir les différentes activités, initiatives et réalisations qui composent progressivement son écosystème.",
       },
     ],
   },

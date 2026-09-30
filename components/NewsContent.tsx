@@ -19,9 +19,9 @@ export default function NewsContent({
       ? {
           intro: {
             label: "News",
-            title: "The Group,\nthrough its projects.",
+            title: "Inside the Group.\nWhat comes next.",
             description:
-              "Latest news from LMG, milestones in the Group's development and the projects bringing its expertise to life.",
+              "News, launches, projects and milestones shaping the development of LMG Group and its ecosystem.",
           },
 
           list: {
@@ -34,16 +34,16 @@ export default function NewsContent({
           nextStep: {
             title: "Explore the projects.",
             description:
-              "Discover the artistic worlds, live experiences and digital projects developed across the Group.",
+              "Discover the projects, initiatives and solutions developed across the LMG ecosystem.",
             label: "Explore Projects",
           },
         }
       : {
           intro: {
             label: "Actualités",
-            title: "Le groupe,\nau fil des projets.",
+            title: "Dans le groupe.\nEt pour la suite.",
             description:
-              "Les nouvelles de LMG, les étapes de son développement et les projets qui donnent vie à ses métiers.",
+              "Actualités, lancements, projets et étapes clés qui accompagnent le développement de LMG Group et de son écosystème.",
           },
 
           list: {
@@ -57,7 +57,7 @@ export default function NewsContent({
           nextStep: {
             title: "Entrez dans les projets.",
             description:
-              "Découvrez les univers artistiques, les expériences live et les projets digitaux présentés par le groupe.",
+              "Découvrez les projets, les initiatives et les solutions développés au sein de l’écosystème LMG.",
             label: "Explorer les projets",
           },
         };

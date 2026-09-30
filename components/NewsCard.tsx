@@ -28,11 +28,11 @@ export default function NewsCard({
       ? {
           signature: (
             <>
-              Music.
+              Create.
               <br />
-              Live.
+              Develop.
               <br />
-              Creative.
+              Build.
             </>
           ),
           journal: "THE GROUP JOURNAL",
@@ -41,11 +41,11 @@ export default function NewsCard({
       : {
           signature: (
             <>
-              Musique.
+              Créer.
               <br />
-              Live.
+              Développer.
               <br />
-              Création.
+              Construire.
             </>
           ),
           journal: "LE JOURNAL DU GROUPE",
