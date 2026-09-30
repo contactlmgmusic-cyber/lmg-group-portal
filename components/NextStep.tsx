@@ -25,14 +25,14 @@ export default function NextStep({
           eyebrow: "THE NEXT CHAPTER",
           title: "Let's build what comes next.",
           description:
-            "An artistic project, a live experience or a brand ready to grow? Connect with the right LMG team.",
+            "A project, a brand, an initiative or a new idea to develop? Connect with LMG and let’s build what comes next.",
           label: "Get in touch",
         }
       : {
           eyebrow: "LE PROCHAIN CHAPITRE",
           title: "Construisons la suite.",
           description:
-            "Un projet artistique, une expérience live ou une marque à faire grandir ? Échangeons avec la bonne équipe LMG.",
+            "Un projet, une marque, une initiative ou une nouvelle idée à développer ? Échangeons avec LMG pour construire la suite.",
           label: "Entrer en contact",
         };
 

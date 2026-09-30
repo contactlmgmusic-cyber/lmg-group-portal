@@ -15,6 +15,6 @@ export default async function Page() {
 
 export const metadata = pageMetadata(
   "Projects",
-  "Discover selected music, live and digital projects from Legacy Music Group.",
+  "Discover selected projects, initiatives and solutions developed across the Legacy Music Group ecosystem.",
   "/projets"
 );
