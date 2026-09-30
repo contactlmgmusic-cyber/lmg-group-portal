@@ -40,7 +40,7 @@ export default function PressContent() {
             discover: "Discover the Group",
 
             description:
-              "Legacy Music Group (LMG) is an independent group bringing together music, live entertainment and creative expertise. Its activities are structured around two complementary businesses: LMG Music, dedicated to artist development, music projects and live entertainment; and LMG Agency, focused on strategy, creative direction, communication and digital experiences.",
+              "Legacy Music Group (LMG) is an independent group developing brands, projects and solutions across culture, creativity and innovation. Its current activities are structured primarily around two core businesses: LMG Music, dedicated to artist development, music projects and live entertainment; and LMG Agency, focused on strategy, creative direction, communication and digital experiences. The Group is built as an evolving ecosystem designed to support the development of new projects, solutions and activities over time.",
 
             download: "Download company profile",
 
@@ -115,7 +115,7 @@ export default function PressContent() {
             newsLabel: "The LMG Journal",
             newsTitle: "Our News",
 
-            projectsLabel: "Music & Creative",
+            projectsLabel: "Projects & Initiatives",
             projectsTitle: "Our Projects",
           },
         }
@@ -146,7 +146,7 @@ export default function PressContent() {
             discover: "Découvrir le groupe",
 
             description:
-              "Legacy Music Group (LMG) est un groupe indépendant réunissant musique, live et création. Ses activités s’articulent autour de deux pôles complémentaires : LMG Music, consacré au développement artistique, aux projets musicaux et au live entertainment ; et LMG Agency, dédié à la stratégie, à la direction créative, à la communication et aux expériences digitales.",
+              "Legacy Music Group (LMG) est un groupe indépendant qui développe des marques, des projets et des solutions à la croisée de la culture, de la création et de l’innovation. Ses activités s’articulent aujourd’hui principalement autour de deux pôles : LMG Music, consacré au développement artistique, aux projets musicaux et au live entertainment ; et LMG Agency, dédié à la stratégie, à la direction créative, à la communication et aux expériences digitales. Le groupe est construit comme un écosystème évolutif, pensé pour accompagner le développement de nouveaux projets, solutions et activités au fil du temps.",
 
             download: "Télécharger la présentation",
 
@@ -221,7 +221,7 @@ export default function PressContent() {
             newsLabel: "Le journal LMG",
             newsTitle: "Nos actualités",
 
-            projectsLabel: "Musique & création",
+            projectsLabel: "Projets & initiatives",
             projectsTitle: "Nos projets",
           },
         };
