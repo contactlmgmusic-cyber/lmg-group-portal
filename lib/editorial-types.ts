@@ -33,6 +33,9 @@ export type NewsSection = {
   text: string;
   titleEn?: string;
   textEn?: string;
+  image?: string;
+  imageAlt?: string;
+  imageAltEn?: string;
 };
 
 export type NewsArticle = {

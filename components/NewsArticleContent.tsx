@@ -49,6 +49,11 @@ export default function NewsArticleContent({
         locale === "en" && section.textEn
           ? section.textEn
           : section.text,
+      image: section.image,
+      imageAlt:
+        locale === "en" && section.imageAltEn
+          ? section.imageAltEn
+          : section.imageAlt || "",
     })),
   };
 
@@ -163,6 +168,22 @@ export default function NewsArticleContent({
                   <p>
                     {section.text}
                   </p>
+
+                  {section.image && (
+                    <figure className="article-section-media">
+                      <img
+                        src={section.image}
+                        alt={section.imageAlt}
+                        loading="lazy"
+                      />
+
+                      {section.imageAlt && (
+                        <figcaption>
+                          {section.imageAlt}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
                 </section>
               )
             )}

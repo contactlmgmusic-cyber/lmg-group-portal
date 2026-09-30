@@ -1682,3 +1682,41 @@
     transform: none;
   }
 }
+
+/* News article — editorial section media */
+.article-section-media {
+  margin: clamp(32px, 5vw, 64px) 0 clamp(48px, 7vw, 88px);
+}
+
+.article-section-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.article-section-media figcaption {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+@media (min-width: 1100px) {
+  .article-section-media {
+    width: min(112%, 1040px);
+  }
+}
+
+@media (max-width: 700px) {
+  .article-section-media {
+    margin: 28px 0 48px;
+  }
+
+  .article-section-media img {
+    border-radius: 0;
+  }
+}
