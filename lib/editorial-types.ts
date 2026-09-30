@@ -45,5 +45,6 @@ export type NewsArticle = {
   dateLabel?: string;
   intro: string;
   introEn?: string;
+  image?: string;
   sections: readonly NewsSection[];
 };

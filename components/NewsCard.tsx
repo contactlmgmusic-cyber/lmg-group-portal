@@ -72,20 +72,44 @@ const localizedArticle = {
       href={`/actualites/${article.slug}`}
       className="news-card"
     >
-      <div
-        className="news-card-art"
-        aria-hidden="true"
-      >
-        <span>LMG GROUP</span>
+      {article.image ? (
+        <div
+          className="news-card-art news-card-art-image"
+          aria-hidden="true"
+        >
+          <img
+            src={article.image}
+            alt=""
+            className="news-card-cover"
+          />
 
-        <strong>
-          {content.signature}
-        </strong>
+          <div className="news-card-cover-overlay" />
 
-        <span>
-          {content.journal} ↗
-        </span>
-      </div>
+          <div className="news-card-cover-top">
+            <span>LMG GROUP</span>
+            <span>{localizedArticle.category}</span>
+          </div>
+
+          <div className="news-card-cover-bottom">
+            <span>{content.journal} ↗</span>
+          </div>
+        </div>
+      ) : (
+        <div
+          className="news-card-art"
+          aria-hidden="true"
+        >
+          <span>LMG GROUP</span>
+
+          <strong>
+            {content.signature}
+          </strong>
+
+          <span>
+            {content.journal} ↗
+          </span>
+        </div>
+      )}
 
       <div className="news-card-content">
         <p className="eyebrow">
