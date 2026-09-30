@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Contact Us",
-  "Contact Legacy Music Group for music, live entertainment, creative, digital, press, partnerships and general inquiries.",
+  "Contact Legacy Music Group, LMG Music or LMG Agency for projects, partnerships, press inquiries and new opportunities.",
   "/contact"
 );
 

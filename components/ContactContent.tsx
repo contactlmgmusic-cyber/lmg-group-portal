@@ -17,7 +17,7 @@ export default function ContactContent() {
           breadcrumbAria: "Breadcrumb",
 
           intro:
-            "To contact LMG, choose the category that best matches your inquiry. You can connect with the relevant business or contact the Group directly.",
+            "To contact LMG, choose the category that best matches your inquiry. Connect with one of our businesses or contact LMG Group directly for partnerships, Group projects and other opportunities.",
 
           categories: [
             {
@@ -52,9 +52,9 @@ export default function ContactContent() {
           },
 
           group: {
-            title: "Group, partnerships & other inquiries",
+            title: "LMG Group, partnerships & opportunities",
             description:
-              "Questions about Legacy Music Group, partnership opportunities or inquiries involving more than one LMG business.",
+              "For questions about Legacy Music Group, partnerships, Group-led projects, new initiatives or opportunities that extend beyond a specific LMG business.",
             destination: "Contact by email",
             subject: "LMG Group — General inquiry",
           },
@@ -62,7 +62,7 @@ export default function ContactContent() {
           help: {
             title: "Not sure who to contact?",
             description:
-              "Briefly introduce your inquiry, the relevant LMG business if you know it, and your contact details.",
+              "Briefly introduce your inquiry, project or opportunity, the relevant LMG business if applicable, and your contact details.",
 
             exchangeTitle: "Help us understand your inquiry",
             exchangeDescription:
@@ -75,7 +75,7 @@ export default function ContactContent() {
           breadcrumbAria: "Fil d’Ariane",
 
           intro:
-            "Pour contacter LMG, choisissez la catégorie qui correspond à votre demande. Vous pourrez rejoindre le pôle concerné ou écrire directement au groupe.",
+            "Pour contacter LMG, choisissez la catégorie qui correspond à votre demande. Contactez l’une de nos activités ou adressez-vous directement à LMG Group pour un partenariat, un projet du groupe ou une autre opportunité.",
 
           categories: [
             {
@@ -110,9 +110,9 @@ export default function ContactContent() {
           },
 
           group: {
-            title: "Groupe, partenariats & autres demandes",
+            title: "LMG Group, partenariats & opportunités",
             description:
-              "Une question sur Legacy Music Group, une proposition de partenariat ou une demande qui concerne plusieurs activités du groupe.",
+              "Pour toute question sur Legacy Music Group, proposition de partenariat, projet porté par le groupe, nouvelle initiative ou opportunité qui dépasse le cadre d’une activité spécifique.",
             destination: "Contact par e-mail",
             subject: "LMG Group — Demande générale",
           },
@@ -120,7 +120,7 @@ export default function ContactContent() {
           help: {
             title: "Vous ne savez pas à qui vous adresser ?",
             description:
-              "Présentez brièvement votre demande, le pôle concerné si vous le connaissez et vos coordonnées.",
+              "Présentez brièvement votre demande, votre projet ou votre opportunité, l’activité LMG concernée le cas échéant et vos coordonnées.",
 
             exchangeTitle: "Pour faciliter l’échange",
             exchangeDescription:
